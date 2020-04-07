@@ -17,6 +17,7 @@ class StudentRequest < ActiveRecord::Base
     # ------------- fall 2019 --------------
     COURSE_KEY_1 = "629"
     COURSE_KEY_2 = "606"
+    COURSE_KEY_3 = "605"
     
     SESSION_ID_629_1 = "600"
     SESSION_ID_629_2 = "601"
