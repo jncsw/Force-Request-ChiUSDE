@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20191208225048) do
     t.string   "course_id"
     t.string   "course_name"
     t.string   "section_id"
+    t.string   "isValid"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
