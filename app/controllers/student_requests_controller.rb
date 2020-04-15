@@ -589,10 +589,14 @@ class StudentRequestsController < ApplicationController
     @requestPriority = StudentRequest::PRIORITY_LIST
     
     #------------- fall 2019 --------------
-    @requestCourse = StudentRequest::COURSE_LIST
-    @requestSection = StudentRequest::SESSION_LIST
+    # @requestCourse = StudentRequest::COURSE_LIST
+    # @requestSection = StudentRequest::SESSION_LIST
     #------------- fall 2019 --------------
-    
+    puts '*-*-*-*---*-*---*-*-*-*'
+    puts Course.where(:isValid => '1')[0].course_id
+    puts '*-*-*-*---*-*---*-*-*-*'
+    @requestCourse = Course.where(:isValid => '1')
+    # @requestSection = 
     @majorList = Major.pluck(:major_id)
     
   end
