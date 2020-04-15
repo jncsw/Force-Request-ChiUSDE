@@ -25,26 +25,26 @@
         %td   
           = label :student_request, :course_id, 'Course Id* (CSCE)'
         %td  
-          = select :student_request, "course_id", @requestCourse, :required => true, :id => "section_id"
-          :javascript 
-            var section1 = '<option selected="selected" value="600">600</option><option value="601">601</option>';
-            var section2 = '<option selected="selected" value="600">600</option>';
-            $(document).ready(function(){
-              $("select#student_request_course_id").change(function(){
-                if($(this).val()=="629")
-                {
-                  $("#student_request_section_id").html(section1);
-                }
-                else if($(this).val()=="606")
-                {
-                  $("#student_request_section_id").html(section2);
-                }
-                 else if($(this).val()=="605")
-                {
-                  $("#student_request_section_id").html(section2);
-                }
-                });
-              });
+          = select :student_request, 'course_id', @requestCourse.all.collect {|p| [ p.course_id, p.id ] }, :required => true, :id => "course_id"
+          // :javascript 
+          //   var section1 = '<option selected="selected" value="600">600</option><option value="601">601</option>';
+          //   var section2 = '<option selected="selected" value="600">600</option>';
+          //   $(document).ready(function(){
+          //     $("select#student_request_course_id").change(function(){
+          //       if($(this).val()=="629")
+          //       {
+          //         $("#student_request_section_id").html(section1);
+          //       }
+          //       else if($(this).val()=="606")
+          //       {
+          //         $("#student_request_section_id").html(section2);
+          //       }
+          //       else if($(this).val()=="605")
+          //       {
+          //         $("#student_request_section_id").html(section2);
+          //       }
+          //       });
+          //     });
           // ---------------19 fall ---------------------------
       %tr
         %td   
@@ -52,7 +52,7 @@
         %td  
           // = text_field :student_request, 'section_id', class: 'input-field', :required => true, placeholder: 'i.e. to choose course CSCE 629-600, enter 600', :pattern => "[0-9]{3}", :oninvalid => "this.setCustomValidity('Please enter 3 numbers of Section ID')", :oninput => "this.setCustomValidity('')", :required => true
           // ---------------19 fall ---------------------------
-          = select :student_request, 'section_id', @requestSection, :required => true, :id => "section_id"
+          = select :student_request, 'section_id', @requestCourse.all.collect {|p| [ p.section_id, p.id ] }, :required => true, :id => "section_id"
           // ---------------19 fall ---------------------------
       %tr
         %td   

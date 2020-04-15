@@ -77,9 +77,9 @@ limits = [{:classification => 'G7', "Very High".to_sym => '99', :High => '99', :
           {:classification => 'U5', "Very High".to_sym => '99', :High => '99', :Normal => '99', :Low => '99', "Very Low".to_sym => '99'},
           {:classification => 'G8', "Very High".to_sym => '99', :High => '99', :Normal => '99', :Low => '99', "Very Low".to_sym => '99'}]
 
-courses = [{:course_id => "606", :course_name => "Software Engineering", :section_id => "600"},
-          {:course_id => "629", :course_name => "Analysis of Algorithm", :section_id => "600"},
-          {:course_id => "629", :course_name => "Analysis of Algorithm", :section_id => "601"},
+courses = [{:course_id => "606", :course_name => "Software Engineering", :section_id => "600", :isValid => '1'},
+          {:course_id => "629", :course_name => "Analysis of Algorithm", :section_id => "600", :isValid => '1'},
+          {:course_id => "629", :course_name => "Analysis of Algorithm", :section_id => "601", :isValid => '1'},
           ]
 
 courses.each do |course|
