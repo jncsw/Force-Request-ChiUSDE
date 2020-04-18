@@ -63,6 +63,10 @@ class StudentRequestsController < ApplicationController
   end
 
   def add_force_request #create force requests by admin
+    puts '+=========================='
+    puts 'here is add_force_request'
+    puts params[:admin_request][:uin]
+    puts '+=========================='
     @students = Student.where(:uin => params[:admin_request][:uin])
     if @students[0].nil?
       flash[:warning] = 'Student of UIN doesn\'t exist in system, please add him first!'
@@ -601,6 +605,25 @@ class StudentRequestsController < ApplicationController
     
   end
 
+  # def initEditCoursesAndSections
+  #   @classificationList = StudentRequest::CLASSIFICATION_LIST
+  #   @requestPriority = StudentRequest::PRIORITY_LIST
+
+  #   #------------- fall 2019 --------------
+  #   # @requestCourse = StudentRequest::COURSE_LIST
+  #   # @requestSection = StudentRequest::SESSION_LIST
+  #   #------------- fall 2019 --------------
+  #   puts '*-*-*-*---*-*---*-*-*-*'
+  #   puts '*-*-*-*---*-*---*-*-*-*'
+
+  #   puts Course.where(:isValid => '1')[0].course_id
+  #   puts '*-*-*-*---*-*---*-*-*-*'
+  #   puts '*-*-*-*---*-*---*-*-*-*'
+  #   @requestCourse = Course.where(:isValid => '1')
+  #   # @requestSection =
+  #   @majorList = Major.pluck(:major_id)
+  # end
+
   def adminprivileges
     if session_get(:uin) == nil
       redirect_to root_path
@@ -631,8 +654,33 @@ class StudentRequestsController < ApplicationController
   end
 
   def add_new_force_request
+    puts '+=========================='
+    puts 'here is add_new_force_request'
+    puts '+=========================='
     initForNewForceRequest
   end
+
+  def edit_courses_and_sections
+    @classificationList = StudentRequest::CLASSIFICATION_LIST
+    @YearSemester = StudentRequest::YEAR_SEMESTER
+    @requestSemester = StudentRequest::REQUEST_SEMESTER
+    @requestPriority = StudentRequest::PRIORITY_LIST
+    
+    #------------- fall 2019 --------------
+    # @requestCourse = StudentRequest::COURSE_LIST
+    # @requestSection = StudentRequest::SESSION_LIST
+    #------------- fall 2019 --------------
+    puts '*-*-*-*---*-*---*-*-*-*'
+    puts Course.where(:isValid => '1')[0].course_id
+    puts '*-*-*-*---*-*---*-*-*-*'
+    @requestCourse = Course.where(:isValid => '1')
+    # @requestSection = 
+    @majorList = Major.pluck(:major_id)
+  end
+
+  # def show
+  #   puts 'in show! *************'
+  # end
   
   def set_request_limit
     @limit = Limit.uniq.pluck(:classification)

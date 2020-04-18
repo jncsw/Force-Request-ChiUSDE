@@ -1,0 +1,96 @@
+// - unless session[:uin].nil?
+//   = render 'layouts/login'
+
+// %h1  
+//   Add new Force Request to system 
+//   .form_new_request
+//   = form_tag student_requests_add_new_force_request_path, :id => 'new_request' do
+//     %table{:border => "0"}
+//       %tr
+//         %td
+//           = label :admin_request, :uin, 'UIN of student*'
+//         %td 
+//           = text_field :admin_request, 'uin', class: 'input-field', :required => true, :pattern => "[0-9]{9}", :oninvalid => "this.setCustomValidity('Invalid UIN')", :oninput => "this.setCustomValidity('')"
+//       %tr
+//         %td   
+//           = label :student_request, :expected_graduation, 'Expected Graduation*'
+//         %td 
+//           = select :student_request, 'expected_graduation', @YearSemester
+//       %tr
+//         %td   
+//           = label :student_request, :request_semester, 'Request Semester*'
+//         %td  
+//           = select :student_request, 'request_semester', @requestSemester, :required => true
+//       %tr
+//         %td   
+//           = label :student_request, :course_id, 'Course Id* (CSCE)'
+//         %td  
+//           = select :student_request, 'course_id', @requestCourse.all.collect {|p| [ p.course_id, p.id ] }, :required => true, :id => "course_id"
+//           // :javascript 
+//           //   var section1 = '<option selected="selected" value="600">600</option><option value="601">601</option>';
+//           //   var section2 = '<option selected="selected" value="600">600</option>';
+//           //   $(document).ready(function(){
+//           //     $("select#student_request_course_id").change(function(){
+//           //       if($(this).val()=="629")
+//           //       {
+//           //         $("#student_request_section_id").html(section1);
+//           //       }
+//           //       else if($(this).val()=="606")
+//           //       {
+//           //         $("#student_request_section_id").html(section2);
+//           //       }
+//           //       else if($(this).val()=="605")
+//           //       {
+//           //         $("#student_request_section_id").html(section2);
+//           //       }
+//           //       });
+//           //     });
+//           // ---------------19 fall ---------------------------
+//       %tr
+//         %td   
+//           = label :student_request, :section_id, 'Section Id*'
+//         %td  
+//           // = text_field :student_request, 'section_id', class: 'input-field', :required => true, placeholder: 'i.e. to choose course CSCE 629-600, enter 600', :pattern => "[0-9]{3}", :oninvalid => "this.setCustomValidity('Please enter 3 numbers of Section ID')", :oninput => "this.setCustomValidity('')", :required => true
+//           // ---------------19 fall ---------------------------
+//           = select :student_request, 'section_id', @requestCourse.all.collect {|p| [ p.section_id, p.id ] }, :required => true, :id => "section_id"
+//           // ---------------19 fall ---------------------------
+//       %tr
+//         %td   
+//           = label :student_request, :notes, 'Notes '
+//         %td  
+//           = text_area :student_request, 'notes', class: 'notes'
+//     = submit_tag 'Confirm', :id => 'request_button_left'
+    
+//   = form_tag(student_requests_adminprivileges_path, method: :get) do
+//     = submit_tag 'Cancel', :id => 'request_button_right'
+    
+- unless session[:uin].nil?
+  = render 'layouts/login'
+
+%h1
+  Edit Courses and Sections
+  .form_new_request
+  = form_tag(student_requests_edit_courses_and_sections_path, method: "get") do
+    %table{:border => "0"}
+      %tr
+        %td   
+          = label :student_request, :course_id, 'Course Id* (CSCE)'
+        %td  
+          = select :student_request, 'course_id', @requestCourse.all.collect {|p| [ p.course_id, p.id ] }, :required => true, :id => "course_id"
+      %tr
+        %td   
+          = label :student_request, :section_id, 'Section Id*'
+        %td  
+          // = text_field :student_request, 'section_id', class: 'input-field', :required => true, placeholder: 'i.e. to choose course CSCE 629-600, enter 600', :pattern => "[0-9]{3}", :oninvalid => "this.setCustomValidity('Please enter 3 numbers of Section ID')", :oninput => "this.setCustomValidity('')", :required => true
+          // ---------------19 fall ---------------------------
+          = select :student_request, 'section_id', @requestCourse.all.collect {|p| [ p.section_id, p.id ] }, :required => true, :id => "section_id"
+          // ---------------19 fall ---------------------------
+      %tr
+        %td   
+          = label :student_request, :notes, 'Notes '
+        %td  
+          = text_area :student_request, 'notes', class: 'notes'
+    = submit_tag 'Confirm', :id => 'request_button_left'
+    
+  = form_tag(student_requests_adminprivileges_path, method: :get) do
+    = submit_tag 'Cancel', :id => 'request_button_right'
