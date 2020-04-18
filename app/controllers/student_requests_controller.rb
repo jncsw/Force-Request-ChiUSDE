@@ -660,7 +660,8 @@ class StudentRequestsController < ApplicationController
     initForNewForceRequest
   end
 
-  def edit_courses_and_sections
+  def edit_courses_and_something_else
+    @students = Student.where(:uin => session_get(:uin))
     @classificationList = StudentRequest::CLASSIFICATION_LIST
     @YearSemester = StudentRequest::YEAR_SEMESTER
     @requestSemester = StudentRequest::REQUEST_SEMESTER
@@ -676,6 +677,8 @@ class StudentRequestsController < ApplicationController
     @requestCourse = Course.where(:isValid => '1')
     # @requestSection = 
     @majorList = Major.pluck(:major_id)
+    render :edit_couses_and_sections
+    
   end
 
   # def show
