@@ -1,9 +1,44 @@
 - unless session[:uin].nil?
-  = render 'layouts/login'
+  = render 'layouts/login' 
 // -------------------------fall19---------------
 %script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
 :javascript
   window.jQuery || document.write('<script src="js/jquery-1.7.1.js">\x3C/script>')
+:javascript
+  function select_course_id()
+  {
+    var  myselect=document.getElementById("course_id");
+    var index=myselect.selectedIndex ;
+    var section_id_list;
+    id = myselect.options[index].value;
+    a = myselect.options[index].text;
+    alert(a);
+    var xhttp = new XMLHttpRequest();
+    var section_set = new Set();
+    xhttp.onreadystatechange = function() 
+    {
+      if (this.readyState == 4 && this.status == 200) 
+      {
+        section_id_list = JSON.parse(this.responseText);
+        var x = document.getElementById("section_id")
+        console.log(section_id_list)
+        for (var id of section_id_list )
+        {
+          section_set.add(id)
+          console.log(id)
+        }
+        console.log(section_set)
+        for (var id of section_set)
+        {
+          var option = document.createElement("option");
+          option.text = id;
+          x.add(option);
+        }
+      }
+    }
+    xhttp.open("GET", "course/" + a, true);
+    xhttp.send();
+  }
 // --------------------------fall19----------------
 %body{:onload => "pageinit()"}
   %h1 Making New Request
@@ -61,7 +96,7 @@
           %td  
             // = text_field :student_request, 'course_id', class: 'input-field', :required => true, placeholder: 'i.e. to choose course CSCE 629-600, enter 629', :pattern => "[0-9]{3}", :oninvalid => "this.setCustomValidity('Please enter 3 numbers of Course ID')", :oninput => "this.setCustomValidity('')", :required => true
             // ---------------19 fall ---------------------------
-            = select :student_request, 'course_id', @requestCourse.all.collect {|p| [ p.course_id, p.id ] } , :required => true, :id => "course_id"
+            = select :student_request, 'course_id', @requestCourse.all.collect {|p| [ p.course_id, p.id ] } , {}, {:required => true, :id => "course_id", :onchange => "select_course_id()"}
             // = select :course, 'course_id', @courses, :required => true, :id => "course_id"
             // :javascript 
             //   var section1 = '<option selected="selected" value="600">600</option><option value="601">601</option>';
@@ -85,7 +120,7 @@
           %td  
             // = text_field :student_request, 'section_id', class: 'input-field', :required => true, placeholder: 'i.e. enter comma seperated section id(s) ', :pattern =>"([0-9]{3})(,[0-9]{3})*",:oninvalid => "this.setCustomValidity('Please enter comma seperated 3 numbers of Section(s) ID')",  :oninput => "this.setCustomValidity('')", :required => true
             // ---------------19 fall ---------------------------
-            = select :student_request, 'section_id', @requestCourse.all.collect {|p| [ p.section_id, p.id ] }, :required => true, :id => "section_id"
+            = select :student_request, 'section_id', {}, {}, {:required => true, :id => "section_id"}
             // ---------------19 fall ---------------------------            
         %tr
           %td   
@@ -102,5 +137,3 @@
       
     =  form_tag(students_show_path, method: :get) do
       = submit_tag 'Cancel', :id => 'request_button_right'
-      
-
