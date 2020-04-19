@@ -88,26 +88,14 @@ class StudentRequestsController < ApplicationController
 
 
 def get_section_id_by_course_id
-    puts "&&&&&&&&&&&&&&&&&&&&&&&&&"
-    puts "&&&&&&&&&&&&&&&&&&&&&&&&&"
-    puts "&&&&&&&&&&&&&&&&&&&&&&&&&"
-    puts "&&&&&&&&&&&&&&&&&&&&&&&&&"
-    puts params[:course_id]
-    puts "&&&&&&&&&&&&&&&&&&&&&&&&&"
-    puts "&&&&&&&&&&&&&&&&&&&&&&&&&"
-    puts "&&&&&&&&&&&&&&&&&&&&&&&&&"
-    puts "&&&&&&&&&&&&&&&&&&&&&&&&&"
     @section_by_id = Course.where(course_id: params[:course_id])
-    puts "!!!!!!!!!!!!!!!!!!!!!!!!!!"
     section_id_list = []
     @section_by_id.each do |i|
       puts i.id
       section_id_list.append(i.section_id)
     end
-    puts "!!!!!!!!!!!!!!!!!!!!!!!!!!"
     section_id_json =  section_id_list.to_json
     puts section_id_json
-    puts "!!!!!!!!!!!!!!!!!!!!!!!!!!"
     render :json =>  section_id_json
   end
 
