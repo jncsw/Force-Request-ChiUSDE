@@ -15,6 +15,7 @@ class Course < ApplicationRecord
             newCourse.course_id = row[0]
             newCourse.course_name = row[2]
             newCourse.section_id = row[1]
+            newCourse.semester = row[3]
             newCourse.isValid = '1'
             newCourse.save
         end
