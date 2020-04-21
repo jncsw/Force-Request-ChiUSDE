@@ -184,11 +184,11 @@ students = [{:uin => "126003824", :password => "123123", :major => "CEEN", :clas
             
             ]
             
-courses = [{:course_id => "606", :course_name => "Software Engineering", :section_id => "600", :isValid =>"1"},
-           {:course_id => "629", :course_name => "Analysis of Algorithm", :section_id => "600", :isValid =>"1"},
-           {:course_id => "629", :course_name => "Analysis of Algorithm", :section_id => "601", :isValid =>"1"},
-           {:course_id => "710", :course_name => "123", :section_id => "123", :isValid =>"1"},
-           {:course_id => "888", :course_name => "test", :section_id => "602", :isValid =>"0"},
+courses = [{:course_id => "606", :course_name => "Software Engineering", :semester => "2020 Fall", :section_id => "600", :isValid =>"1"},
+           {:course_id => "629", :course_name => "Analysis of Algorithm", :semester => "2020 Fall", :section_id => "600", :isValid =>"1"},
+           {:course_id => "629", :course_name => "Analysis of Algorithm", :semester => "2020 Fall", :section_id => "601", :isValid =>"1"},
+           {:course_id => "710", :course_name => "123", :semester => "2020 Fall", :section_id => "123", :isValid =>"1"},
+           {:course_id => "888", :course_name => "test", :semester => "2020 Fall", :section_id => "602", :isValid =>"0"},
            ]
 
 courses.each do |course|

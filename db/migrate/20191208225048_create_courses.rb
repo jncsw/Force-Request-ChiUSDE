@@ -5,6 +5,7 @@ class CreateCourses < ActiveRecord::Migration[5.0]
       
       t.string :course_id
       t.string :course_name
+      t.string :semester
       t.string :section_id
       t.string :isValid
       
