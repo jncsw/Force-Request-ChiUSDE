@@ -1,34 +1,39 @@
 - unless session[:uin].nil?
   = render 'layouts/login'
 // -------------------------fall19---------------
-%script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
-:javascript
-  window.jQuery || document.write('<script src="js/jquery-1.7.1.js">\x3C/script>')
+// %script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+// :javascript
+//   window.jQuery || document.write('<script src="js/jquery-1.7.1.js">\x3C/script>')
 // --------------------------fall19----------------
 %h1
   Edit Courses and Sections
   .form_new_request
   = form_tag(student_requests_edit_courses_and_sections_path, method: "get") do
-    %table{:border => "0"}
-      %tr
-        %td   
-          = label :student_request, :course_id, 'Course Id* (CSCE)'
-        %td  
-          = select :student_request, 'course_id', @requestCourse.all.collect {|p| [ p.course_id, p.id ] }, :required => true, :id => "course_id"
-      %tr
-        %td   
-          = label :student_request, :section_id, 'Section Id*'
-        %td  
-          // = text_field :student_request, 'section_id', class: 'input-field', :required => true, placeholder: 'i.e. to choose course CSCE 629-600, enter 600', :pattern => "[0-9]{3}", :oninvalid => "this.setCustomValidity('Please enter 3 numbers of Section ID')", :oninput => "this.setCustomValidity('')", :required => true
-          // ---------------19 fall ---------------------------
-          = select :student_request, 'section_id', @requestCourse.all.collect {|p| [ p.section_id, p.id ] }, :required => true, :id => "section_id"
-          // ---------------19 fall ---------------------------
-      %tr
-        %td   
-          = label :student_request, :notes, 'Notes '
-        %td  
-          = text_area :student_request, 'notes', class: 'notes'
-    = submit_tag 'Confirm', :id => 'request_button_left'
-    
-  = form_tag(student_requests_adminprivileges_path, method: :get) do
-    = submit_tag 'Cancel', :id => 'request_button_right'
+    %table#student_requests.sortable
+      %thead
+        %tr
+          %th Course ID
+          %th Section ID
+          %th Available
+          %th Action
+      %tbody
+        - Course.all.collect {|p| [ p.course_id, p.section_id, p.isValid] }.each do |record|
+          %tr
+            %td= record[0]
+            %td= record[1]
+            // window.print()
+            - if record[2] == "1"
+              %td= 'Yes'
+              %td= button_to 'Switch to No'
+            - else
+              %td= 'No'
+              %td= button_to 'Switch to Yes'
+            // %td= record.request_semester
+            // %td= record.creation_date.strftime("%Y-%m-%d %H:%M:%S")
+            // %td= record.state
+            // %td= record.priority
+            // %td= record.notes
+    //   = submit_tag 'Confirm', :id => 'request_button_left'
+      
+    // = form_tag(student_requests_adminprivileges_path, method: :get) do
+    //   = submit_tag 'Cancel', :id => 'request_button_right'
