@@ -86,7 +86,43 @@ class StudentRequestsController < ApplicationController
     end
   end
 
-
+def updateCourses
+  puts '************'
+  puts 'rendering '
+  puts '************'
+  puts '************'
+  render student_requests_updateCourses_path
+end
+  
+def uploadCourses
+  puts '************'
+  puts 'Uploading'
+  puts '************'
+  puts '************'
+  
+  
+  if params[:csv][:function] == 'Override'
+    Course.delete_all
+  end
+  puts params[:dump].nil?
+  if params[:dump].nil?
+    flash[:warning] = "No CSV file selected."
+    redirect_to student_requests_updateCourses_path
+    return
+  end
+  puts params[:dump][:file].content_type
+  if params[:dump][:file].content_type != "text/csv" and params[:dump][:file].content_type != "application/vnd.ms-excel"
+    flash[:warning] = "Not a valid CSV file."
+    redirect_to student_requests_updateCourses_path
+    return
+  end
+  @num = Course.import(params[:dump][:file])
+  flash[:notice] = "CSV uploaded successfully, "+Course.count.to_s+' courses in the system now.'
+  redirect_to student_requests_updateCourses_path
+  
+end
+  
+  
 def get_section_id_by_course_id
     @section_by_id = Course.where(course_id: params[:course_id])
     section_id_list = []

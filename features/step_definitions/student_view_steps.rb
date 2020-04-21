@@ -279,15 +279,15 @@ end
 
 And(/^I assign priority to the request$/) do
   @student_request = {:minor=>"None", :expected_graduation=>"2021 Fall", :request_semester=>"2020 Fall", :course_id=>"606", :section_id => "600" , :priority => "High"}
-  page.has_content?("123123123")
+  page.should has_content?("Making New Request")
   select(@student_request[:expected_graduation], from:'Expected Graduation*')
   select(@student_request[:request_semester], from:'Request Semester*')
   
-  select(@student_request[:course_id], from:'Course Id* (CSCE)')
-  select(@student_request[:section_id], from:'Section Id(s)*')
+  # select(@student_request[:course_id], from:'Course Id* (CSCE)')
   
-  # fill_in('Course Id*', :with => @student_request[:course_id])
-  # fill_in('Section Id(s)*', :with => @student_request[:section_id]) 
+  fill_in('Course Id* (CSCE)', :with => @student_request[:course_id])
+  # select(@student_request[:section_id], from:'Section Id(s)*')
+  fill_in('Section Id(s)*', :with => @student_request[:section_id]) 
   select(@student_request[:priority], from:'Priority*')
 end
 

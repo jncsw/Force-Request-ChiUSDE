@@ -26,6 +26,11 @@ Rails.application.routes.draw do
   put 'student_requests/hold' => 'student_requests#hold'
   put 'student_requests/email_the_status' => 'student_requests#email_the_status'
   
+  
+  # upload files
+  get 'student_requests/updateCourses' => 'student_requests#updateCourses'
+  post 'student_requests/updateCourses' => 'student_requests#uploadCourses'
+  
   get 'student_requests/set_request_limit' => 'student_requests#set_request_limit'
   post 'students_requests/createlimits' => 'student_requests#createlimits'
   

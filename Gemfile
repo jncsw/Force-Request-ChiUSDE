@@ -49,6 +49,14 @@ gem 'sprockets', '~> 3.7.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+# Upload file
+
+gem 'carrierwave'
+gem 'bootstrap-sass'
+
+
+
 gem 'themoviedb'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0', :group => :development
@@ -87,3 +95,5 @@ group :test do
   gem 'rubycas-client', :git => 'git://github.com/shubham7jain/rubycas-client.git'
   gem 'rails-controller-testing'
 end
+
+
