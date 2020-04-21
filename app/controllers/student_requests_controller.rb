@@ -766,9 +766,9 @@ def get_section_id_by_course_id
     # @requestCourse = StudentRequest::COURSE_LIST
     # @requestSection = StudentRequest::SESSION_LIST
     #------------- fall 2019 --------------
-    puts '*-*-*-*---*-*---*-*-*-*'
-    puts Course.where(:isValid => '1')[0].course_id
-    puts '*-*-*-*---*-*---*-*-*-*'
+    # puts '*-*-*-*---*-*---*-*-*-*'
+    # puts Course.where(:isValid => '1')[0].course_id
+    # puts '*-*-*-*---*-*---*-*-*-*'
     @requestCourse = Course.where(:isValid => '1')
     # @requestSection = 
     @majorList = Major.pluck(:major_id)
