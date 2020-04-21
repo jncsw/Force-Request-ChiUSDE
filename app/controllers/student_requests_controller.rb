@@ -48,8 +48,8 @@ class StudentRequestsController < ApplicationController
   
   def edit_course_no
     unless params[:id].nil?
-      puts "******************************************************"
-      puts params[:id]
+      #puts "******************************************************"
+      #puts params[:id]
       @courseid = params[:id][0,3]
       @sectionid = params[:id][3,6]
       #puts @sectionid
@@ -63,12 +63,14 @@ class StudentRequestsController < ApplicationController
       end
     #puts params[:sid]
     end
+    flash[:notice] = @courseid + " is invalid now"
+    redirect_to student_requests_edit_courses_and_sections_path
   end
   
   def edit_course_yes
     unless params[:id].nil?
-      puts "******************************************************"
-      puts params[:id]
+      #puts "******************************************************"
+      #puts params[:id]
       @courseid = params[:id][0,3]
       @sectionid = params[:id][3,6]
       #puts @sectionid
@@ -82,6 +84,8 @@ class StudentRequestsController < ApplicationController
       end
     #puts params[:sid]
     end
+    flash[:notice] = @courseid + " is valid now"
+    redirect_to student_requests_edit_courses_and_sections_path
   end
   
   
