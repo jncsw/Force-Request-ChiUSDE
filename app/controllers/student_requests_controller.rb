@@ -46,6 +46,50 @@ class StudentRequestsController < ApplicationController
     end
   end
   
+  def edit_course_no
+    unless params[:id].nil?
+      #puts "******************************************************"
+      #puts params[:id]
+      @courseid = params[:id][0,3]
+      @sectionid = params[:id][3,6]
+      #puts @sectionid
+      Course.where(course_id: @courseid).each do |s|
+          if s.section_id == @sectionid
+            #puts s.section_id
+            id = s.id
+            request = Course.find(id)
+            request.update_attribute(:isValid, '0')
+          end
+      end
+    #puts params[:sid]
+    end
+    flash[:notice] = @courseid + " is invalid now"
+    redirect_to student_requests_edit_courses_and_sections_path
+  end
+  
+  def edit_course_yes
+    unless params[:id].nil?
+      #puts "******************************************************"
+      #puts params[:id]
+      @courseid = params[:id][0,3]
+      @sectionid = params[:id][3,6]
+      #puts @sectionid
+      Course.where(course_id: @courseid).each do |s|
+          if s.section_id == @sectionid
+            #puts s.section_id
+            id = s.id
+            request = Course.find(id)
+            request.update_attribute(:isValid, '1')
+          end
+      end
+    #puts params[:sid]
+    end
+    flash[:notice] = @courseid + " is valid now"
+    redirect_to student_requests_edit_courses_and_sections_path
+  end
+  
+  
+  
   def update_request
     id = params[:student_request][:request_id]
     request = StudentRequest.find(id)
@@ -63,6 +107,10 @@ class StudentRequestsController < ApplicationController
   end
 
   def add_force_request #create force requests by admin
+    puts '+=========================='
+    puts 'here is add_force_request'
+    puts params[:admin_request][:uin]
+    puts '+=========================='
     @students = Student.where(:uin => params[:admin_request][:uin])
     if @students[0].nil?
       flash[:warning] = 'Student of UIN doesn\'t exist in system, please add him first!'
@@ -652,6 +700,25 @@ def get_section_id_by_course_id
     
   end
 
+  # def initEditCoursesAndSections
+  #   @classificationList = StudentRequest::CLASSIFICATION_LIST
+  #   @requestPriority = StudentRequest::PRIORITY_LIST
+
+  #   #------------- fall 2019 --------------
+  #   # @requestCourse = StudentRequest::COURSE_LIST
+  #   # @requestSection = StudentRequest::SESSION_LIST
+  #   #------------- fall 2019 --------------
+  #   puts '*-*-*-*---*-*---*-*-*-*'
+  #   puts '*-*-*-*---*-*---*-*-*-*'
+
+  #   puts Course.where(:isValid => '1')[0].course_id
+  #   puts '*-*-*-*---*-*---*-*-*-*'
+  #   puts '*-*-*-*---*-*---*-*-*-*'
+  #   @requestCourse = Course.where(:isValid => '1')
+  #   # @requestSection =
+  #   @majorList = Major.pluck(:major_id)
+  # end
+
   def adminprivileges
     if session_get(:uin) == nil
       redirect_to root_path
@@ -682,8 +749,36 @@ def get_section_id_by_course_id
   end
 
   def add_new_force_request
+    puts '+=========================='
+    puts 'here is add_new_force_request'
+    puts '+=========================='
     initForNewForceRequest
   end
+
+  def edit_courses_and_something_else
+    @students = Student.where(:uin => session_get(:uin))
+    @classificationList = StudentRequest::CLASSIFICATION_LIST
+    @YearSemester = StudentRequest::YEAR_SEMESTER
+    @requestSemester = StudentRequest::REQUEST_SEMESTER
+    @requestPriority = StudentRequest::PRIORITY_LIST
+    
+    #------------- fall 2019 --------------
+    # @requestCourse = StudentRequest::COURSE_LIST
+    # @requestSection = StudentRequest::SESSION_LIST
+    #------------- fall 2019 --------------
+    puts '*-*-*-*---*-*---*-*-*-*'
+    puts Course.where(:isValid => '1')[0].course_id
+    puts '*-*-*-*---*-*---*-*-*-*'
+    @requestCourse = Course.where(:isValid => '1')
+    # @requestSection = 
+    @majorList = Major.pluck(:major_id)
+    render :edit_couses_and_sections
+    
+  end
+
+  # def show
+  #   puts 'in show! *************'
+  # end
   
   def set_request_limit
     @limit = Limit.uniq.pluck(:classification)

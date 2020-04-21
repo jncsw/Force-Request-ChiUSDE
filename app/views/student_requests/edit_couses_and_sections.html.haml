@@ -1,0 +1,40 @@
+- unless session[:uin].nil?
+  = render 'layouts/login'
+// -------------------------fall19---------------
+// %script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+// :javascript
+//   window.jQuery || document.write('<script src="js/jquery-1.7.1.js">\x3C/script>')
+// --------------------------fall19----------------
+%h1
+  Edit Courses and Sections
+  .form_new_request
+  = form_tag(student_requests_edit_courses_and_sections_path, method: "get") do
+    %table#student_requests.sortable
+      %thead
+        %tr
+          %th Course ID
+          %th Section ID
+          %th Available
+          %th Action
+      %tbody
+        - Course.all.collect {|p| [ p.course_id, p.section_id, p.isValid] }.each do |record|
+          %tr
+            %td= record[0]
+            %td= record[1]
+            // window.print()
+            - if record[2] == "1"
+              %td= 'Yes'
+              //- @pass => (record[0],record[1])
+              %td= button_to 'Switch to No', {:action => "edit_course_no", :id => record[0] + record[1], :controller => "student_requests"}, :method => :put
+            - else
+              %td= 'No'
+              %td= button_to 'Switch to Yes', {:action => "edit_course_yes", :id => record[0] + record[1], :controller => "student_requests"}, :method => :put
+            // %td= record.request_semester
+            // %td= record.creation_date.strftime("%Y-%m-%d %H:%M:%S")
+            // %td= record.state
+            // %td= record.priority
+            // %td= record.notes
+    //   = submit_tag 'Confirm', :id => 'request_button_left'
+      
+    // = form_tag(student_requests_adminprivileges_path, method: :get) do
+    //   = submit_tag 'Cancel', :id => 'request_button_right'

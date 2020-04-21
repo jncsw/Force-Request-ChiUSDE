@@ -1,5 +1,3 @@
-require 'digest/md5'
-
 Given(/^I am on the Login Page as admin$/) do
   visit('/')
   # fill_in('Enter your Name', :with => "1234312")
@@ -18,12 +16,10 @@ end
 
 And(/^I use admin account to login$/) do
   choose('session_user_admin')
-  @user_info = {:UIN => "123456789@tamu.edu",  :password => "tamu2020", :role => "session_user_admin"}
+  @user_info = {:UIN => "123456789@tamu.edu",  :password => "tamu2017"}
   fill_in('Enter your Email', :with => @user_info[:UIN])
   fill_in('Enter your password', :with => @user_info[:password])
-#   select(@user_info[:role], from:'Login as')
   click_button('Login')
-
 end
 
 Then(/^I should be on Admin View page$/) do
@@ -90,14 +86,12 @@ When(/^I click add a new force request to system$/) do
 end
 
 And(/^I fill the info of new request$/) do
-    @user_info = {:UIN => "777888999", :expected_graduation => "2021 Fall",  :request_semester => "2020 Fall", :course_id => '629', :section_id => '600'}
+    @user_info = {:UIN => "777888999", :expected_graduation => "2019 Fall",  :request_semester => "2019 Fall", :course_id => '314', :section_id => '100'}
     fill_in('UIN of student*', :with => @user_info[:UIN])
     select(@user_info[:expected_graduation], from:'Expected Graduation*')
     select(@user_info[:request_semester], from:'Request Semester*')
-    select(@user_info[:course_id], from:'Course Id* (CSCE)')
-    select(@user_info[:section_id], from:'Section Id*')
-    # fill_in('Course Id* (CSCE)', :with => @user_info[:course_id])
-    # fill_in('Section Id*', :with => @user_info[:section_id])
+    fill_in('Course Id*', :with => @user_info[:course_id])
+    fill_in('Section Id*', :with => @user_info[:section_id])
     
     click_button('Confirm')
 end
@@ -129,7 +123,7 @@ Then(/^I have the requests in desired domain$/) do
 end
 
 When(/^I click course name button$/) do
-    click_button('CSCE 629')
+    click_button('CSCE 026')
 end
 
 Then(/^the page collapse$/) do
@@ -217,7 +211,7 @@ end
 
 And (/^I should see template message/) do
     fill_in 'Enter message here', :with => "./app/views/student_mailer/email_template.text.erb"
-    page.should have_content(:all, "CSE Force Request System")
+    page.should have_content(:all, "CSCE Academic Advising Team")
 end
 
 And (/^I edit the template/) do
