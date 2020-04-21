@@ -172,7 +172,7 @@ end
   
   
 def get_section_id_by_course_id
-    @section_by_id = Course.where(course_id: params[:course_id])
+    @section_by_id = Course.where(course_id: params[:course_id], isValid: '1')
     section_id_list = []
     @section_by_id.each do |i|
       puts i.id
