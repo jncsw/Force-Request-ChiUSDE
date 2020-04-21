@@ -53,7 +53,7 @@ class StudentRequestsController < ApplicationController
     puts "******************"
     puts "******************"
     puts params[:id]
-    puts 'here'
+    puts 'here  '
     puts "******************"
     puts "******************"
     puts "******************"
