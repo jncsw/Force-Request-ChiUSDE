@@ -29,6 +29,11 @@ Rails.application.routes.draw do
   get 'student_requests/edit_courses_and_sections' => 'student_requests#edit_courses_and_something_else'
   # post 'student_requests/edit_courses_and_sections' => 'student_requests#edit_courses_and_sections'
 
+  
+  # upload files
+  get 'student_requests/updateCourses' => 'student_requests#updateCourses'
+  post 'student_requests/updateCourses' => 'student_requests#uploadCourses'
+  
   get 'student_requests/set_request_limit' => 'student_requests#set_request_limit'
   post 'students_requests/createlimits' => 'student_requests#createlimits'
   
@@ -76,6 +81,7 @@ Rails.application.routes.draw do
   get 'students/add_new_student' => 'students#add_new_student'
   post 'students/add_new_student' => 'students#add_student'
 
+  get 'student_requests/course/:course_id' => 'student_requests#get_section_id_by_course_id'
   
   # Admin
   get 'admins/add_new_admin' => 'admins#add_new_admin'
