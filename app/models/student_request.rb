@@ -17,59 +17,10 @@ class StudentRequest < ActiveRecord::Base
     # ------------- fall 2019 --------------
     COURSE_KEY_1 = "629"
     COURSE_KEY_2 = "606"
-    COURSE_KEY_3 = "605"
-    COURSE_KEY_4 = "604"
-    COURSE_KEY_5 = "603"
-    COURSE_KEY_6 = "602"
-    COURSE_KEY_7 = "601"
-    COURSE_KEY_8 = "608"
-    COURSE_KEY_9 = "611"
-    COURSE_KEY_10 = "612"
-    COURSE_KEY_11 = "614"
-    COURSE_KEY_12 = "616"
-    COURSE_KEY_13 = "625"
-    COURSE_KEY_14 = "633"
-    COURSE_KEY_15 = "636"
-    COURSE_KEY_16 = "637"
-    COURSE_KEY_17 = "641"
-    COURSE_KEY_18 = "645"
-    COURSE_KEY_19 = "679"
-    COURSE_KEY_20 = "681"
-    COURSE_KEY_21 = "702"
-    COURSE_KEY_22 = "706"
-    COURSE_KEY_23 = "708"
-    COURSE_KEY_24 = "709"
-    COURSE_KEY_25 = "735"
-    COURSE_KEY_26 = "702"
-
     
-    SESSION_ID_1 = "600"
-    SESSION_ID_2 = "601"
-    SESSION_ID_3 = "602"
-    SESSION_ID_4 = "603"
-    SESSION_ID_5 = "604"
-    SESSION_ID_6 = "605"
-    SESSION_ID_7 = "606"
-    SESSION_ID_8 = "607"
-    SESSION_ID_9 = "608"
-    SESSION_ID_10 = "609"
-    SESSION_ID_11 = "613"
-    SESSION_ID_12 = "614"
-    SESSION_ID_13 = "615"
-    SESSION_ID_14 = "616"
-    SESSION_ID_15 = "618"
-    SESSION_ID_16 = "620"
-    SESSION_ID_17 = "700"
-    SESSION_ID_18 = "550"
-    SESSION_ID_19 = "570"
-    SESSION_ID_20 = "576"
-    SESSION_ID_21 = "550"
-
-
-
-    
-
-
+    SESSION_ID_629_1 = "600"
+    SESSION_ID_629_2 = "601"
+    SESSION_ID_606_1 = "000"
     #---------------------------------------
     
     Time.zone = 'Central Time (US & Canada)'
@@ -95,13 +46,9 @@ class StudentRequest < ActiveRecord::Base
     SEMESTER_LIST = [StudentRequest::NSPRING, StudentRequest::NFALL, StudentRequest::NSUMMER,StudentRequest::SPRING, StudentRequest::FALL, StudentRequest::SUMMER]
     
     # ------------- fall 2019 --------------
-    COURSE_LIST = [StudentRequest::COURSE_KEY_1,COURSE_KEY_2,COURSE_KEY_3,COURSE_KEY_4,COURSE_KEY_5,
-                  COURSE_KEY_6, COURSE_KEY_7, COURSE_KEY_8,COURSE_KEY_9,COURSE_KEY_10,COURSE_KEY_11,COURSE_KEY_12,COURSE_KEY_13,
-                  COURSE_KEY_14,COURSE_KEY_15,COURSE_KEY_16,COURSE_KEY_17,COURSE_KEY_18,COURSE_KEY_19,COURSE_KEY_20,COURSE_KEY_21,
-                  COURSE_KEY_22,COURSE_KEY_23,COURSE_KEY_24,COURSE_KEY_25,COURSE_KEY_26]
+    COURSE_LIST = [StudentRequest::COURSE_KEY_1,COURSE_KEY_2]
     # SESSION_LIST_629 = [SESSION_ID_629_1,SESSION_ID_629_2]
-    SESSION_LIST = [SESSION_ID_1, SESSION_ID_2,SESSION_ID_3,SESSION_ID_4,SESSION_ID_5,SESSION_ID_6,SESSION_ID_7,SESSION_ID_8,SESSION_ID_9, 
-                   SESSION_ID_10,SESSION_ID_11,SESSION_ID_12,SESSION_ID_13,SESSION_ID_14,SESSION_ID_15,SESSION_ID_16,SESSION_ID_17,SESSION_ID_18,SESSION_ID_19,SESSION_ID_20,SESSION_ID_21]
+    SESSION_LIST = [SESSION_ID_629_1, SESSION_ID_629_2]
     # ------------- fall 2019 --------------
     
     #Classification
