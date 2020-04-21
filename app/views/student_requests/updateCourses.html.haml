@@ -1,0 +1,25 @@
+= form_for :dump, :url=>{:action=>"uploadCourses"}, :html => { :multipart => true } do |f|
+  %table
+    %tr
+      %td
+        %label{:for => "dump_file"}
+          Select a CSV File :
+      %td
+        = f.file_field :file, accept: '.csv'
+    %tr
+      %td
+        = label :csv, :function, 'Upload as'
+      %td 
+        = radio_button(:csv, :function, "Append", :checked => true)
+        Append
+        = radio_button(:csv, :function, "Override")
+        Override
+    %tr
+      
+      %td
+        = link_to '<button type="button" class="regularbutton">Go Back</button>'.html_safe, student_requests_adminprivileges_path
+      %td
+        = submit_tag 'Submit'
+        // = form_tag(student_requests_adminprivileges_path, method: :get) do
+        //   = submit_tag 'Go Back'
+      
