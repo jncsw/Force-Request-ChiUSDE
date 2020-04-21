@@ -47,6 +47,16 @@ class StudentRequestsController < ApplicationController
   end
   
   def edit_course_no
+    
+    
+    puts "******************"
+    puts "******************"
+    puts "******************"
+    puts params[:id]
+    puts 'here'
+    puts "******************"
+    puts "******************"
+    puts "******************"
     unless params[:id].nil?
       #puts "******************************************************"
       #puts params[:id]
