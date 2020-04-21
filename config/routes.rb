@@ -43,6 +43,8 @@ Rails.application.routes.draw do
   post 'student_requests/logout' => 'student_requests#logout'
   
   put 'student_requests/edit_request' => 'student_requests#edit_request'
+  put 'student_requests/edit_course_no' => 'student_requests#edit_course_no'
+  put 'student_requests/edit_course_yes' => 'student_requests#edit_course_yes'
   put 'student_requests/update_request' => 'student_requests#update_request'
 
   resources :student_requests

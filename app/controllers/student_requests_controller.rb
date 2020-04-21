@@ -46,6 +46,46 @@ class StudentRequestsController < ApplicationController
     end
   end
   
+  def edit_course_no
+    unless params[:id].nil?
+      puts "******************************************************"
+      puts params[:id]
+      @courseid = params[:id][0,3]
+      @sectionid = params[:id][3,6]
+      #puts @sectionid
+      Course.where(course_id: @courseid).each do |s|
+          if s.section_id == @sectionid
+            #puts s.section_id
+            id = s.id
+            request = Course.find(id)
+            request.update_attribute(:isValid, '0')
+          end
+      end
+    #puts params[:sid]
+    end
+  end
+  
+  def edit_course_yes
+    unless params[:id].nil?
+      puts "******************************************************"
+      puts params[:id]
+      @courseid = params[:id][0,3]
+      @sectionid = params[:id][3,6]
+      #puts @sectionid
+      Course.where(course_id: @courseid).each do |s|
+          if s.section_id == @sectionid
+            #puts s.section_id
+            id = s.id
+            request = Course.find(id)
+            request.update_attribute(:isValid, '1')
+          end
+      end
+    #puts params[:sid]
+    end
+  end
+  
+  
+  
   def update_request
     id = params[:student_request][:request_id]
     request = StudentRequest.find(id)

@@ -24,10 +24,11 @@
             // window.print()
             - if record[2] == "1"
               %td= 'Yes'
-              %td= button_to 'Switch to No'
+              //- @pass => (record[0],record[1])
+              %td= button_to 'Switch to No', {:action => "edit_course_no", :id => record[0] + record[1], :controller => "student_requests"}, :method => :put
             - else
               %td= 'No'
-              %td= button_to 'Switch to Yes'
+              %td= button_to 'Switch to Yes', {:action => "edit_course_yes", :id => record[0] + record[1], :controller => "student_requests"}, :method => :put
             // %td= record.request_semester
             // %td= record.creation_date.strftime("%Y-%m-%d %H:%M:%S")
             // %td= record.state
