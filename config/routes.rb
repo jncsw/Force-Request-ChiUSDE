@@ -26,6 +26,14 @@ Rails.application.routes.draw do
   put 'student_requests/hold' => 'student_requests#hold'
   put 'student_requests/email_the_status' => 'student_requests#email_the_status'
   
+  get 'student_requests/edit_courses_and_sections' => 'student_requests#edit_courses_and_something_else'
+  # post 'student_requests/edit_courses_and_sections' => 'student_requests#edit_courses_and_sections'
+
+  
+  # upload files
+  get 'student_requests/updateCourses' => 'student_requests#updateCourses'
+  post 'student_requests/updateCourses' => 'student_requests#uploadCourses'
+  
   get 'student_requests/set_request_limit' => 'student_requests#set_request_limit'
   post 'students_requests/createlimits' => 'student_requests#createlimits'
   
@@ -40,6 +48,8 @@ Rails.application.routes.draw do
   post 'student_requests/logout' => 'student_requests#logout'
   
   put 'student_requests/edit_request' => 'student_requests#edit_request'
+  put 'student_requests/edit_course_no' => 'student_requests#edit_course_no'
+  put 'student_requests/edit_course_yes' => 'student_requests#edit_course_yes'
   put 'student_requests/update_request' => 'student_requests#update_request'
 
   resources :student_requests

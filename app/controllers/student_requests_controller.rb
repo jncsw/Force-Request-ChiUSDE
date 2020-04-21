@@ -46,6 +46,50 @@ class StudentRequestsController < ApplicationController
     end
   end
   
+  def edit_course_no
+    unless params[:id].nil?
+      #puts "******************************************************"
+      #puts params[:id]
+      @courseid = params[:id][0,3]
+      @sectionid = params[:id][3,6]
+      #puts @sectionid
+      Course.where(course_id: @courseid).each do |s|
+          if s.section_id == @sectionid
+            #puts s.section_id
+            id = s.id
+            request = Course.find(id)
+            request.update_attribute(:isValid, '0')
+          end
+      end
+    #puts params[:sid]
+    end
+    flash[:notice] = @courseid + " is invalid now"
+    redirect_to student_requests_edit_courses_and_sections_path
+  end
+  
+  def edit_course_yes
+    unless params[:id].nil?
+      #puts "******************************************************"
+      #puts params[:id]
+      @courseid = params[:id][0,3]
+      @sectionid = params[:id][3,6]
+      #puts @sectionid
+      Course.where(course_id: @courseid).each do |s|
+          if s.section_id == @sectionid
+            #puts s.section_id
+            id = s.id
+            request = Course.find(id)
+            request.update_attribute(:isValid, '1')
+          end
+      end
+    #puts params[:sid]
+    end
+    flash[:notice] = @courseid + " is valid now"
+    redirect_to student_requests_edit_courses_and_sections_path
+  end
+  
+  
+  
   def update_request
     id = params[:student_request][:request_id]
     request = StudentRequest.find(id)
@@ -63,6 +107,10 @@ class StudentRequestsController < ApplicationController
   end
 
   def add_force_request #create force requests by admin
+    puts '+=========================='
+    puts 'here is add_force_request'
+    puts params[:admin_request][:uin]
+    puts '+=========================='
     @students = Student.where(:uin => params[:admin_request][:uin])
     if @students[0].nil?
       flash[:warning] = 'Student of UIN doesn\'t exist in system, please add him first!'
@@ -86,28 +134,52 @@ class StudentRequestsController < ApplicationController
     end
   end
 
-
+def updateCourses
+  puts '************'
+  puts 'rendering '
+  puts '************'
+  puts '************'
+  render student_requests_updateCourses_path
+end
+  
+def uploadCourses
+  puts '************'
+  puts 'Uploading'
+  puts '************'
+  puts '************'
+  
+  
+  if params[:csv][:function] == 'Override'
+    Course.delete_all
+  end
+  puts params[:dump].nil?
+  if params[:dump].nil?
+    flash[:warning] = "No CSV file selected."
+    redirect_to student_requests_updateCourses_path
+    return
+  end
+  puts params[:dump][:file].content_type
+  if params[:dump][:file].content_type != "text/csv" and params[:dump][:file].content_type != "application/vnd.ms-excel"
+    flash[:warning] = "Not a valid CSV file."
+    redirect_to student_requests_updateCourses_path
+    return
+  end
+  @num = Course.import(params[:dump][:file])
+  flash[:notice] = "CSV uploaded successfully, "+Course.count.to_s+' courses in the system now.'
+  redirect_to student_requests_updateCourses_path
+  
+end
+  
+  
 def get_section_id_by_course_id
-    puts "&&&&&&&&&&&&&&&&&&&&&&&&&"
-    puts "&&&&&&&&&&&&&&&&&&&&&&&&&"
-    puts "&&&&&&&&&&&&&&&&&&&&&&&&&"
-    puts "&&&&&&&&&&&&&&&&&&&&&&&&&"
-    puts params[:course_id]
-    puts "&&&&&&&&&&&&&&&&&&&&&&&&&"
-    puts "&&&&&&&&&&&&&&&&&&&&&&&&&"
-    puts "&&&&&&&&&&&&&&&&&&&&&&&&&"
-    puts "&&&&&&&&&&&&&&&&&&&&&&&&&"
     @section_by_id = Course.where(course_id: params[:course_id], isValid: '1')
-    puts "!!!!!!!!!!!!!!!!!!!!!!!!!!"
     section_id_list = []
     @section_by_id.each do |i|
       puts i.id
       section_id_list.append(i.section_id)
     end
-    puts "!!!!!!!!!!!!!!!!!!!!!!!!!!"
     section_id_json =  section_id_list.to_json
     puts section_id_json
-    puts "!!!!!!!!!!!!!!!!!!!!!!!!!!"
     render :json =>  section_id_json
   end
 
@@ -628,6 +700,25 @@ def get_section_id_by_course_id
     
   end
 
+  # def initEditCoursesAndSections
+  #   @classificationList = StudentRequest::CLASSIFICATION_LIST
+  #   @requestPriority = StudentRequest::PRIORITY_LIST
+
+  #   #------------- fall 2019 --------------
+  #   # @requestCourse = StudentRequest::COURSE_LIST
+  #   # @requestSection = StudentRequest::SESSION_LIST
+  #   #------------- fall 2019 --------------
+  #   puts '*-*-*-*---*-*---*-*-*-*'
+  #   puts '*-*-*-*---*-*---*-*-*-*'
+
+  #   puts Course.where(:isValid => '1')[0].course_id
+  #   puts '*-*-*-*---*-*---*-*-*-*'
+  #   puts '*-*-*-*---*-*---*-*-*-*'
+  #   @requestCourse = Course.where(:isValid => '1')
+  #   # @requestSection =
+  #   @majorList = Major.pluck(:major_id)
+  # end
+
   def adminprivileges
     if session_get(:uin) == nil
       redirect_to root_path
@@ -658,8 +749,36 @@ def get_section_id_by_course_id
   end
 
   def add_new_force_request
+    puts '+=========================='
+    puts 'here is add_new_force_request'
+    puts '+=========================='
     initForNewForceRequest
   end
+
+  def edit_courses_and_something_else
+    @students = Student.where(:uin => session_get(:uin))
+    @classificationList = StudentRequest::CLASSIFICATION_LIST
+    @YearSemester = StudentRequest::YEAR_SEMESTER
+    @requestSemester = StudentRequest::REQUEST_SEMESTER
+    @requestPriority = StudentRequest::PRIORITY_LIST
+    
+    #------------- fall 2019 --------------
+    # @requestCourse = StudentRequest::COURSE_LIST
+    # @requestSection = StudentRequest::SESSION_LIST
+    #------------- fall 2019 --------------
+    puts '*-*-*-*---*-*---*-*-*-*'
+    puts Course.where(:isValid => '1')[0].course_id
+    puts '*-*-*-*---*-*---*-*-*-*'
+    @requestCourse = Course.where(:isValid => '1')
+    # @requestSection = 
+    @majorList = Major.pluck(:major_id)
+    render :edit_couses_and_sections
+    
+  end
+
+  # def show
+  #   puts 'in show! *************'
+  # end
   
   def set_request_limit
     @limit = Limit.uniq.pluck(:classification)

@@ -3,17 +3,21 @@
   = render 'layouts/login'
 #adminprivileges
 = link_to '<button type="button" class="regularbutton">Add New Force Admin</button>'.html_safe, admins_add_new_admin_path
-%br
+// %br
 = link_to '<button type="button" class="regularbutton">Add New Student</button>'.html_safe, students_add_new_student_path
-%br
+// %br
 = link_to '<button type="button" class="regularbutton">Add New Force Request</button>'.html_safe, student_requests_add_new_force_request_path
 %br
 = link_to '<button type="button" class="regularbutton">Delete All Force Requests</button>'.html_safe, student_requests_deleteall_path, :data => { confirm: 'Are you sure that you want to delete all force requests?'}, :method => :delete
-%br
+//%br
 = link_to '<button type="button" class="regularbutton">Set Force Request Limit</button>'.html_safe, student_requests_set_request_limit_path
+// %br
+= link_to '<button type="button" class="regularbutton">Update Courses</button>'.html_safe, student_requests_updateCourses_path
 %br
 = link_to '<button type="button" class="regularbutton">Edit Email Template</button>'.html_safe, student_requests_get_email_template_path, :method => :put
-%br
+//%br
+= link_to '<button type="button" class="regularbutton">Edit Courses and Sections</button>'.html_safe, student_requests_edit_courses_and_sections_path
+//%br
 = link_to '<button type="button" class="regularbutton">Cancel</button>'.html_safe, student_requests_adminview_path
 
 
