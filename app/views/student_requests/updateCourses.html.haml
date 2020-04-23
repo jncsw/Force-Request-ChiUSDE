@@ -1,3 +1,14 @@
+- unless session[:uin].nil?
+  = render 'layouts/login'
+
+// -------------------------fall19---------------
+%script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+:javascript
+  window.jQuery || document.write('<script src="js/jquery-1.7.1.js">\x3C/script>')
+// --------------------------fall19----------------
+%body{:onload => "pageinit()"}
+
+
 = form_for :dump, :url=>{:action=>"uploadCourses"}, :html => { :multipart => true } do |f|
   %table
     %tr
