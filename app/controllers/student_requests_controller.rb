@@ -48,19 +48,26 @@ class StudentRequestsController < ApplicationController
   
   def edit_course_no
     unless params[:id].nil?
-      #puts "******************************************************"
+      
       #puts params[:id]
       @courseid = params[:id][0,3]
-      @sectionid = params[:id][3,6]
-      #puts @sectionid
-      Course.where(course_id: @courseid).each do |s|
-          if s.section_id == @sectionid
-            #puts s.section_id
-            id = s.id
-            request = Course.find(id)
-            request.update_attribute(:isValid, '0')
-          end
+      @sectionid = params[:id][3,3]
+      @semester = params[:id][6,params[:id].length]
+      #puts "******************************************************"
+      #puts params[:id].length
+      #puts @semester
+      #puts "******************"
+      Course.where(course_id: @courseid,semester: @semester, section_id: @sectionid).each do |s|
+      #puts "******************"
+      # Course.where(course_id: @courseid).each do |s|
+      #     if s.section_id == @sectionid and s.semester == @semester
+            
+        id = s.id
+        request = Course.find(id)
+      #       puts request
+        request.update_attribute(:isValid, '0')
       end
+      # end
     #puts params[:sid]
     end
     flash[:notice] = @courseid + " is invalid now"
@@ -72,16 +79,22 @@ class StudentRequestsController < ApplicationController
       #puts "******************************************************"
       #puts params[:id]
       @courseid = params[:id][0,3]
-      @sectionid = params[:id][3,6]
+      @sectionid = params[:id][3,3]
+      @semester = params[:id][6,params[:id].length]
       #puts @sectionid
-      Course.where(course_id: @courseid).each do |s|
-          if s.section_id == @sectionid
-            #puts s.section_id
-            id = s.id
-            request = Course.find(id)
-            request.update_attribute(:isValid, '1')
-          end
-      end
+      Course.where(course_id: @courseid,semester: @semester, section_id: @sectionid).update({'isValid': '1'})
+      
+      
+      # Course.where(course_id: @courseid,semester: @semester, section_id: @sectionid).each do |s|
+      #     #if s.section_id == @sectionid
+      #       #puts s.section_id
+      #     id = s.id
+      #     request = Course.find(id)
+      #     request.update_attribute(:isValid, '1')
+      #     #end
+      # end
+      
+      
     #puts params[:sid]
     end
     flash[:notice] = @courseid + " is valid now"
