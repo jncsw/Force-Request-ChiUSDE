@@ -5,6 +5,43 @@
 :javascript
   window.jQuery || document.write('<script src="js/jquery-1.7.1.js">\x3C/script>')
 :javascript
+  function select_request_semester()
+  {
+    var  myselect=document.getElementById("request_semester");
+    var index=myselect.selectedIndex ;
+    var section_id_list;
+    id = myselect.options[index].value;
+    a = myselect.options[index].text;
+    var xhttp = new XMLHttpRequest();
+    var section_set = new Set();
+    var getUrl = window.location;
+    var baseUrl = getUrl .protocol + "//" + getUrl.host + "/";
+    xhttp.onreadystatechange = function() 
+    {
+      if (this.readyState == 4 && this.status == 200) 
+      {
+        section_id_list = JSON.parse(this.responseText);
+        console.log(section_id_list)
+        var x = document.getElementById("course_id")
+        x.options.length = 0
+        for (var id of section_id_list )
+        {
+          section_set.add(id)
+        }
+        
+        for (var id of section_set)
+        {
+          var option = document.createElement("option");
+          option.value = id;
+          option.text = id;
+          x.add(option);
+        }
+      }
+    }
+    xhttp.open("GET", baseUrl + "student_requests/request_semester/" + a, true);
+    xhttp.send();
+  }
+:javascript
   function select_course_id()
   {
     var  myselect=document.getElementById("course_id");
@@ -90,7 +127,7 @@
           %td   
             = label :student_request, :request_semester, 'Request Semester*'
           %td  
-            = select :student_request, 'request_semester', @requestSemester, :required => true
+            = select :student_request, 'request_semester', @requestSemester, {}, {:required => true, :id => "request_semester", :onchange => "select_request_semester()"}
         %tr
           %td   
             = label :student_request, :course_id, 'Course Id* (CSCE)'

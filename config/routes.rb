@@ -82,6 +82,7 @@ Rails.application.routes.draw do
   post 'students/add_new_student' => 'students#add_student'
 
   get 'student_requests/course/:course_id' => 'student_requests#get_section_id_by_course_id'
+  get 'student_requests/request_semester/:request_semester' => 'student_requests#get_course_id_by_request_semester'
   
   # Admin
   get 'admins/add_new_admin' => 'admins#add_new_admin'

@@ -183,8 +183,22 @@ def uploadCourses
   
 end
   
+  def get_course_id_by_request_semester
+    puts "************************************"
+    @course_by_id = Course.where(semester: params[:request_semester], isValid: '1')
+    course_id_list = []
+    @course_by_id.each do |i|
+      puts i.id
+      puts i.semester
+      course_id_list.append(i.course_id)
+    end
+    course_id_json =  course_id_list.to_json
+    puts course_id_json
+    render :json =>  course_id_json
+  end
   
-def get_section_id_by_course_id
+  def get_section_id_by_course_id
+    puts "+++++++++++++++++++++++++++++++++++++"
     @section_by_id = Course.where(course_id: params[:course_id], isValid: '1')
     section_id_list = []
     @section_by_id.each do |i|
