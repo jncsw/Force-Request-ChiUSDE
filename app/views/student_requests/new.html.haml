@@ -21,14 +21,16 @@
       if (this.readyState == 4 && this.status == 200) 
       {
         section_id_list = JSON.parse(this.responseText);
-        console.log(section_id_list)
         var x = document.getElementById("course_id")
         x.options.length = 0
         for (var id of section_id_list )
         {
           section_set.add(id)
         }
-        
+        var option = document.createElement("option");
+        option.value = -1;
+        option.text = "";
+        x.add(option);
         for (var id of section_set)
         {
           var option = document.createElement("option");
@@ -36,6 +38,8 @@
           option.text = id;
           x.add(option);
         }
+        var y = document.getElementById("section_id")
+        y.options.length = 0
       }
     }
     xhttp.open("GET", baseUrl + "student_requests/request_semester/" + a, true);
@@ -64,7 +68,9 @@
         {
           section_set.add(id)
         }
-        
+        var option = document.createElement("option");
+        option.value = -1;
+        option.text = "";
         for (var id of section_set)
         {
           var option = document.createElement("option");
@@ -72,6 +78,7 @@
           option.text = id;
           x.add(option);
         }
+        
       }
     }
     xhttp.open("GET", baseUrl + "student_requests/course/" + a, true);
@@ -127,14 +134,14 @@
           %td   
             = label :student_request, :request_semester, 'Request Semester*'
           %td  
-            = select :student_request, 'request_semester', @requestSemester, {}, {:required => true, :id => "request_semester", :onchange => "select_request_semester()"}
+            = select :student_request, 'request_semester', @requestSemester, {include_blank: true}, {:required => true, :id => "request_semester", :onchange => "select_request_semester()"}
         %tr
           %td   
             = label :student_request, :course_id, 'Course Id* (CSCE)'
           %td  
             // = text_field :student_request, 'course_id', class: 'input-field', :required => true, placeholder: 'i.e. to choose course CSCE 629-600, enter 629', :pattern => "[0-9]{3}", :oninvalid => "this.setCustomValidity('Please enter 3 numbers of Course ID')", :oninput => "this.setCustomValidity('')", :required => true
             // ---------------19 fall ---------------------------
-            = select :student_request, 'course_id', @requestCourse.all.collect.uniq{|p| [ p.course_id ] }.collect{|p| [ p.course_id ] } , {}, {:required => true, :id => "course_id", :onchange => "select_course_id()"}
+            = select :student_request, 'course_id', @requestCourse.all.collect.uniq{|p| [ p.course_id ] }.collect{|p| [ p.course_id ] } , {include_blank: true}, {:required => true, :id => "course_id", :onchange => "select_course_id()"}
             // = select :course, 'course_id', @courses, :required => true, :id => "course_id"
             // :javascript 
             //   var section1 = '<option selected="selected" value="600">600</option><option value="601">601</option>';
