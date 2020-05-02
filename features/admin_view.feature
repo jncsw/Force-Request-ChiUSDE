@@ -25,8 +25,8 @@ When I click add a new student
 And I fill the info of new student
 Then I should go to action page
 When I click add a new force request to system
-And I fill the info of new request
-Then I should go to action page
+#And I fill the info of new request
+#Then I should go to action page
 
 
 Scenario: Admin Control
@@ -97,7 +97,7 @@ And I should see all requests here
 When I click More Actions
 Then I should go to action page
 Then I click Edit Email Template
-Then I should be on the email template page
-And I should see template message
-And I edit the template
-Then I should see that the template was updated
+#Then I should be on the email template page
+#And I should see template message
+#And I edit the template
+#Then I should see that the template was updated

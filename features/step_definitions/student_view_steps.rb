@@ -89,11 +89,13 @@ And(/^I complete the form$/) do
   @student_request = {:minor=>"None", :expected_graduation=>"2021 Fall", :request_semester=>"2020 Fall", :course_id=>"629", :section_id => "600"}
 #   page.has_content?("123123123")
   select(@student_request[:expected_graduation], from:'Expected Graduation*')
-  select(@student_request[:request_semester], from:'Request Semester*')
-  select(@student_request[:course_id], from:'Course Id* (CSCE)')
-  select(@student_request[:section_id], from:'Section Id(s)*')
-  # fill_in('Course Id*', :with => @student_request[:course_id])
-  # fill_in('Section Id(s)*', :with => @student_request[:section_id]) 
+  select(@student_request[:request_semester], from:'request_semester')
+  #select(@student_request[:course_id], from:'course_id')
+  #select(@student_request[:section_id], from:'section_id')
+  
+  fill_in('course_id', :with => @student_request[:course_id])
+  fill_in('section_id', :with => @student_request[:section_id])
+  
 end
 
 And(/^I complete the form the second time$/) do

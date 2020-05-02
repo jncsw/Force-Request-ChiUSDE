@@ -1,0 +1,412 @@
+Using the default profile...
+Feature: admin process force request
+  As an administrator
+  So I can see all the force request
+  I want to approve/reject force request
+
+  Scenario: Admin download2               # features/admin_action.feature:7
+    Given I am on the Login Page as admin # features/step_definitions/admin_steps.rb:1
+1
+
+    And I use admin account to login      # features/step_definitions/admin_steps.rb:17
+    Then I should be on Admin View page   # features/step_definitions/admin_steps.rb:25
+    And I should see all requests here    # features/step_definitions/admin_steps.rb:31
+    And I click MoreActions               # features/step_definitions/admin_actions_steps.rb:18
+************
+rendering 
+************
+************
+    And I click UpdateCourses             # features/step_definitions/admin_actions_steps.rb:23
+    And I click UploadFile                # features/step_definitions/admin_actions_steps.rb:28
+
+  Scenario: Admin download                # features/admin_action.feature:17
+    Given I am on the Login Page as admin # features/step_definitions/admin_steps.rb:1
+1
+
+    And I use admin account to login      # features/step_definitions/admin_steps.rb:17
+    Then I should be on Admin View page   # features/step_definitions/admin_steps.rb:25
+    And I should see all requests here    # features/step_definitions/admin_steps.rb:31
+
+  #And I click Download button
+  #Then I should get a download with the All_force_requests.csv
+  Scenario: Admin download                                     # features/admin_action.feature:25
+    Given I am on the Login Page as admin                      # features/step_definitions/admin_steps.rb:1
+1
+
+    And I use admin account to login                           # features/step_definitions/admin_steps.rb:17
+    Then I should be on Admin View page                        # features/step_definitions/admin_steps.rb:25
+    And I should see all requests here                         # features/step_definitions/admin_steps.rb:31
+    And I click Download logs button                           # features/step_definitions/admin_actions_steps.rb:5
+    Then I should get a download with the All_request_logs.csv # features/step_definitions/admin_actions_steps.rb:13
+
+Feature: admin SignUp and login
+  As an administrator
+  So that I have all the privilege
+  I want to login to the force request system with password
+
+  Scenario: Admin Login                   # features/admin_view.feature:6
+    Given I am on the Login Page as admin # features/step_definitions/admin_steps.rb:1
+1
+
+    And I use admin account to login      # features/step_definitions/admin_steps.rb:17
+    Then I should be on Admin View page   # features/step_definitions/admin_steps.rb:25
+    And I should see all requests here    # features/step_definitions/admin_steps.rb:31
+
+  Scenario: Admin Actions                          # features/admin_view.feature:12
+    Given I am on the Login Page as admin          # features/step_definitions/admin_steps.rb:1
+1
+
+    And I use admin account to login               # features/step_definitions/admin_steps.rb:17
+    Then I should be on Admin View page            # features/step_definitions/admin_steps.rb:25
+    And I should see all requests here             # features/step_definitions/admin_steps.rb:31
+    When I click More Actions                      # features/step_definitions/admin_steps.rb:37
+    Then I should go to action page                # features/step_definitions/admin_steps.rb:42
+    When I add a new admin                         # features/step_definitions/admin_steps.rb:50
+1
+
+    And I fill the info of new admin               # features/step_definitions/admin_steps.rb:54
+    Then I should back to admin dashboard          # features/step_definitions/admin_steps.rb:63
+    When I click More Actions                      # features/step_definitions/admin_steps.rb:37
+    Then I should go to action page                # features/step_definitions/admin_steps.rb:42
+    When I click add a new student                 # features/step_definitions/admin_steps.rb:68
+    And I fill the info of new student             # features/step_definitions/admin_steps.rb:72
+    Then I should go to action page                # features/step_definitions/admin_steps.rb:42
++==========================
+here is add_new_force_request
++==========================
+    When I click add a new force request to system # features/step_definitions/admin_steps.rb:84
+
+  #And I fill the info of new request
+  #Then I should go to action page
+  Scenario: Admin Control                      # features/admin_view.feature:32
+    Given I am on the Login Page as admin      # features/step_definitions/admin_steps.rb:1
+1
+
+    And I use admin account to login           # features/step_definitions/admin_steps.rb:17
+    Then I should be on Admin View page        # features/step_definitions/admin_steps.rb:25
+    And I should see all requests here         # features/step_definitions/admin_steps.rb:31
+1
+
+    When I filter the requests                 # features/step_definitions/admin_steps.rb:115
+    Then I have the requests in desired domain # features/step_definitions/admin_steps.rb:125
+    When I click course name button            # features/step_definitions/admin_steps.rb:129
+    Then the page collapse                     # features/step_definitions/admin_steps.rb:133
+
+  # Scenario: Approve request
+  # Given I am on the Login Page as admin
+  # And I use admin account to login
+  # Then I should be on Admin View page
+  # When I click Approve
+  # Then I should see Approved
+  # Scenario: Reject request
+  # Given I am on the Login Page as admin
+  # And I use admin account to login
+  # Then I should be on Admin View page
+  # When I click Reject
+  # Then I should see Rejected
+  Scenario: Hold request                  # features/admin_view.feature:57
+    Given I am on the Login Page as admin # features/step_definitions/admin_steps.rb:1
+1
+
+    And I use admin account to login      # features/step_definitions/admin_steps.rb:17
+    Then I should be on Admin View page   # features/step_definitions/admin_steps.rb:25
+
+  # When I click Hold  # Feature nolonger exists
+  # Then I should see Hold
+  # Scenario: Add Notes
+  # Given I am on the Login Page as admin
+  # And I use admin account to login
+  # Then I should be on Admin View page
+  # When I click View Details
+  # Then I should see Request Id Details
+  Scenario: Update Request with nothing changed            # features/admin_view.feature:72
+    Given I am on the Login Page as admin                  # features/step_definitions/admin_steps.rb:1
+1
+
+    And I use admin account to login                       # features/step_definitions/admin_steps.rb:17
+    And I click first Update Selected                      # features/step_definitions/admin_steps.rb:170
+    Then I should be on the custom message page            # features/step_definitions/admin_steps.rb:178
+Hold was selected
+1
+
+    And I type in a custom message                         # features/step_definitions/admin_steps.rb:182
+    Then I should see Nothing has been selected for Update # features/step_definitions/admin_steps.rb:174
+
+  Scenario: Admin set limits on courses     # features/admin_view.feature:80
+    Given I am on the Login Page as admin   # features/step_definitions/admin_steps.rb:1
+1
+
+    And I use admin account to login        # features/step_definitions/admin_steps.rb:17
+    Then I should be on Admin View page     # features/step_definitions/admin_steps.rb:25
+    And I should see all requests here      # features/step_definitions/admin_steps.rb:31
+    When I click More Actions               # features/step_definitions/admin_steps.rb:37
+    Then I should go to action page         # features/step_definitions/admin_steps.rb:42
+    Then I click Set Force Request Limit    # features/step_definitions/admin_steps.rb:187
+    Then I should be on the set limits page # features/step_definitions/admin_steps.rb:204
+
+5
+    And I enter the limits                  # features/step_definitions/admin_steps.rb:191
+    Then I should see limits were set       # features/step_definitions/admin_steps.rb:200
+
+  Scenario: Edit email template           # features/admin_view.feature:92
+    Given I am on the Login Page as admin # features/step_definitions/admin_steps.rb:1
+1
+
+    And I use admin account to login      # features/step_definitions/admin_steps.rb:17
+    Then I should be on Admin View page   # features/step_definitions/admin_steps.rb:25
+    And I should see all requests here    # features/step_definitions/admin_steps.rb:31
+    When I click More Actions             # features/step_definitions/admin_steps.rb:37
+    Then I should go to action page       # features/step_definitions/admin_steps.rb:42
+    Then I click Edit Email Template      # features/step_definitions/admin_steps.rb:208
+
+Feature: students Login
+  As a student
+  So that my information is protected
+  I want to login to the force request system with password
+
+  Background: activators have been added to database # features/student_login.feature:6
+    Given the following activators exist:            # features/step_definitions/student_login_steps.rb:1
+      | name           | uin       | password | email            |
+      | Andrew Bregger | 123123123 | 654321   | adb3649@tamu.edu |
+
+  Scenario: fail to login                              # features/student_login.feature:12
+    When I am on the Login Page                        # features/step_definitions/student_login_steps.rb:7
+    When I login in with a account doesn't exsit       # features/step_definitions/student_login_steps.rb:12
+    Then I should stay at the same page                # features/step_definitions/student_login_steps.rb:35
+    And I should see a non-account exsits message      # features/step_definitions/student_login_steps.rb:39
+    When I enter wrong login information               # features/step_definitions/student_login_steps.rb:19
+    Then I should stay at the same page                # features/step_definitions/student_login_steps.rb:35
+    And I should see a error message                   # features/step_definitions/student_login_steps.rb:43
+    When I login in with account has not been activate # features/step_definitions/student_login_steps.rb:27
+    Then I should stay at the same page                # features/step_definitions/student_login_steps.rb:35
+    And I should see a not-activated message           # features/step_definitions/student_login_steps.rb:47
+
+Feature: students SignUp
+  As a student
+  I want to sign up for a force request account
+  So that I can submit my force request application
+
+  Background: students have been added to database # features/student_signup.feature:6
+    Given the following students exist:            # features/step_definitions/student_signup_steps.rb:1
+      | name           | uin       | password | email            |
+      | Andrew Bregger | 123123123 | 654321   | adb3649@tamu.edu |
+      | Adam will      | 456789789 | 456789   | Will@tamu.edu    |
+
+  Scenario: Student SignUp with incorrect information      # features/student_signup.feature:13
+    Given I am a student want to sign up for an account    # features/step_definitions/student_signup_steps.rb:14
+    When I click on Sign Up                                # features/step_definitions/student_signup_steps.rb:19
+    Then I will be on the Sign Up page                     # features/step_definitions/student_signup_steps.rb:23
+    When I enter two different password or UIN information # features/step_definitions/student_signup_steps.rb:37
+    And I click SignUp                                     # features/step_definitions/student_signup_steps.rb:84
+    Then I should stay on the same page                    # features/step_definitions/student_signup_steps.rb:88
+    And I should recieve a mismatch warning massage        # features/step_definitions/student_signup_steps.rb:105
+      # When I enter a email does not exsiting in TAMU system
+      # And I click SignUp
+      # Then I should stay on the same page
+      # And I should recieve a no-record warning massage
+    When I use a UIN which already been used to sign up    # features/step_definitions/student_signup_steps.rb:48
+    And I click SignUp                                     # features/step_definitions/student_signup_steps.rb:84
+    Then I should return to root page                      # features/step_definitions/student_signup_steps.rb:100
+    And I should recieve a account-exist warning massage   # features/step_definitions/student_signup_steps.rb:109
+
+  Scenario: Student SignUp with correct information     # features/student_signup.feature:31
+    Given I am a student want to sign up for an account # features/step_definitions/student_signup_steps.rb:14
+    When I click on Sign Up                             # features/step_definitions/student_signup_steps.rb:19
+    Then I will be on the Sign Up page                  # features/step_definitions/student_signup_steps.rb:23
+    When I enter correct information                    # features/step_definitions/student_signup_steps.rb:71
+------------------------------
+CPSC
+junqiyang@tamu.edu
+------------------------------
+    And I click SignUp                                  # features/step_definitions/student_signup_steps.rb:84
+    Then I should see my account create successfully    # features/step_definitions/student_signup_steps.rb:119
+
+# features/student_view.feature
+Feature: Student View
+  As a student
+  I want to login to my account
+  So I can submit/withdraw force request and update my profile
+
+  Background: students have been added to database # features/student_view.feature:7
+    Given the following students exist:            # features/step_definitions/student_signup_steps.rb:1
+      | name       | firstname | lastname | uin       | password                         | email              | major            | classification |
+      | junqi yang | junqi     | yang     | 221004901 | d0d1699f721b379f002fe5fb2f781ebe | junqiyang@tamu.edu | Computer Science | G7             |
+      | Adam will  | Adam      | will     | 000000000 | d0d1699f721b379f002fe5fb2f781ebe | Will@tamu.edu      | Computer Science | G7             |
+      | John myer  | John      | myer     | 000000001 | d0d1699f721b379f002fe5fb2f781ebe | jmyer@tamu.edu     | Computer Science | U1             |
+    Given the following limits exist:              # features/step_definitions/student_signup_steps.rb:8
+      | classification | Very High | High | Normal | Low |
+      | G7             | 5         | 5    | 5      | 5   |
+      | G8             | 5         | 5    | 5      | 5   |
+      | U1             | 5         | 5    | 5      | 5   |
+
+  Scenario: View profile                       # features/student_view.feature:21
+    When I am on the Login Page                # features/step_definitions/student_login_steps.rb:7
+    When I login with correct login info       # features/step_definitions/student_view_steps.rb:1
+    Then I should be on Student Dashboard Page # features/step_definitions/student_view_steps.rb:16
+    When I click my profile                    # features/step_definitions/student_view_steps.rb:32
+    Then I should see my personal information  # features/step_definitions/student_view_steps.rb:36
+    And I click OK                             # features/step_definitions/student_view_steps.rb:43
+    Then I should go back to dashboard         # features/step_definitions/student_view_steps.rb:51
+
+  Scenario: Update profile                     # features/student_view.feature:30
+    When I am on the Login Page                # features/step_definitions/student_login_steps.rb:7
+    When I login with correct login info       # features/step_definitions/student_view_steps.rb:1
+    Then I should be on Student Dashboard Page # features/step_definitions/student_view_steps.rb:16
+    When I click my profile                    # features/step_definitions/student_view_steps.rb:32
+    Then I should see my personal information  # features/step_definitions/student_view_steps.rb:36
+------------------------------
+None
+CSCE606Spring2020@tamu.edu
+------------------------------
+    And I click Update                         # features/step_definitions/student_view_steps.rb:47
+    Then I should be on root page              # features/step_definitions/student_view_steps.rb:248
+    And I should see update success            # features/step_definitions/student_view_steps.rb:57
+
+  Scenario: Update profile                         # features/student_view.feature:40
+    When I am on the Login Page                    # features/step_definitions/student_login_steps.rb:7
+    When I login with correct login info           # features/step_definitions/student_view_steps.rb:1
+    Then I should be on Student Dashboard Page     # features/step_definitions/student_view_steps.rb:16
+    When I click my profile                        # features/step_definitions/student_view_steps.rb:32
+    Then I should see my personal information      # features/step_definitions/student_view_steps.rb:36
+    When I fill out the UIN worng                  # features/step_definitions/student_view_steps.rb:62
+------------------------------
+None
+CSCE606Spring2020@tamu.edu
+------------------------------
+    And I click Update                             # features/step_definitions/student_view_steps.rb:47
+    Then I should see error message for same UIN   # features/step_definitions/student_view_steps.rb:70
+    When I fill out the email worng                # features/step_definitions/student_view_steps.rb:66
+------------------------------
+None
+Will@tamu.edu
+------------------------------
+    And I click Update                             # features/step_definitions/student_view_steps.rb:47
+    Then I should see error message for same email # features/step_definitions/student_view_steps.rb:74
+
+  Scenario: Add/withdraw new requests          # features/student_view.feature:53
+    When I am on the Login Page                # features/step_definitions/student_login_steps.rb:7
+    When I login with correct login info       # features/step_definitions/student_view_steps.rb:1
+    Then I should be on Student Dashboard Page # features/step_definitions/student_view_steps.rb:16
+    When I click on New Force Request          # features/step_definitions/student_view_steps.rb:83
+
+  #And I complete the form
+  #And I click Save Request
+  #Then I should see a confirm message
+  #Then I should be on Student Dashboard Page
+  #When I click on Delete
+  #Then I should not see that request on Student Dashboard Page
+  Scenario: Student change password with right information # features/student_view.feature:65
+    When I am on the Login Page                            # features/step_definitions/student_login_steps.rb:7
+    When I login with correct login info                   # features/step_definitions/student_view_steps.rb:1
+    Then I should be on Student Dashboard Page             # features/step_definitions/student_view_steps.rb:16
+    When I click change password button                    # features/step_definitions/student_view_steps.rb:181
+    Then I should be on change password page               # features/step_definitions/student_view_steps.rb:185
+    When I fill the form and confirm                       # features/step_definitions/student_view_steps.rb:208
+    Then I should read a successful message                # features/step_definitions/student_view_steps.rb:191
+
+  Scenario: Student change password with wrong information # features/student_view.feature:74
+    When I am on the Login Page                            # features/step_definitions/student_login_steps.rb:7
+    When I login with correct login info                   # features/step_definitions/student_view_steps.rb:1
+    Then I should be on Student Dashboard Page             # features/step_definitions/student_view_steps.rb:16
+    And I click change password button                     # features/step_definitions/student_view_steps.rb:181
+    Then I should be on change password page               # features/step_definitions/student_view_steps.rb:185
+    When I fill the old password wrongly                   # features/step_definitions/student_view_steps.rb:196
+    Then I stay on the page on recieve warining            # features/step_definitions/student_view_steps.rb:204
+    When I fill the new password wrongly                   # features/step_definitions/student_view_steps.rb:217
+    Then I stay on the page on recieve another warining    # features/step_definitions/student_view_steps.rb:225
+    When I withdraw this request                           # features/step_definitions/student_view_steps.rb:229
+    Then I will back to student dashboard                  # features/step_definitions/student_view_steps.rb:233
+
+  Scenario: Student Logout               # features/student_view.feature:87
+    When I am on the Login Page          # features/step_definitions/student_login_steps.rb:7
+    When I login with correct login info # features/step_definitions/student_view_steps.rb:1
+    And I click logout button            # features/step_definitions/student_view_steps.rb:243
+    Then I should be on root page        # features/step_definitions/student_view_steps.rb:248
+
+  Scenario: Student Forget Password         # features/student_view.feature:93
+    When I am on the Login Page             # features/step_definitions/student_login_steps.rb:7
+    And I click forget password             # features/step_definitions/student_view_steps.rb:259
+    Then I should be on reset password page # features/step_definitions/student_view_steps.rb:263
+    When I input my Email and click reset   # features/step_definitions/student_view_steps.rb:267
+    Then I should see a message             # features/step_definitions/student_view_steps.rb:272
+
+  #New Cucumber tests added
+  Scenario: Add priority on requests           # features/student_view.feature:101
+    When I am on the Login Page                # features/step_definitions/student_login_steps.rb:7
+    When I login with correct login info       # features/step_definitions/student_view_steps.rb:1
+    Then I should be on Student Dashboard Page # features/step_definitions/student_view_steps.rb:16
+    When I click on New Force Request          # features/step_definitions/student_view_steps.rb:83
+
+  #And I complete the form
+  #And I assign priority to the request
+  #And I click Save Request
+  #Then I should see the request with priority
+  #Then I should be on Student Dashboard Page
+  Scenario: Maximum force request limit for graduate student # features/student_view.feature:112
+    When I am on the Login Page                              # features/step_definitions/student_login_steps.rb:7
+    When I login with correct login info                     # features/step_definitions/student_view_steps.rb:1
+    Then I should be on Student Dashboard Page               # features/step_definitions/student_view_steps.rb:16
+    When I click on New Force Request                        # features/step_definitions/student_view_steps.rb:83
+
+  #nd I complete the form
+  #And I click Save Request
+  #Then I should see a confirm message
+  #Then I should be on Student Dashboard Page
+  #When I click on New Force Request
+  #And I complete the form the second time
+  #And I click Save Request
+  #Then I should see a confirm message for second request
+  #Then I should be on Student Dashboard Page
+  #When I click on New Force Request
+  #And I complete the form the third time
+  #And I click Save Request
+  #Then I should see a confirm message for third request
+  #Then I should be on Student Dashboard Page
+  #When I click on New Force Request
+  #And I complete the form the fourth time
+  #And I click Save Request
+  #Then I should see a error message for maximum limit
+  #Then I should be on Student Dashboard Page
+  #Scenario: Maximum force request limit for undergraduate student
+  #When I am on the Login Page
+  #When I login with correct login info as undergraduate student
+  #Then I should be on Student Dashboard Page
+  #When I click on New Force Request
+  #And I complete the form
+  #And I click Save Request
+  #Then I should see a confirm message
+  #Then I should be on Student Dashboard Page
+  #When I click on New Force Request
+  #And I complete the form the second time
+  #And I click Save Request
+  #Then I should see a confirm message for second request
+  #Then I should be on Student Dashboard Page
+  #When I click on New Force Request
+  #And I complete the form the third time
+  #And I click Save Request
+  #Then I should see a confirm message for third request
+  #Then I should be on Student Dashboard Page
+  #When I click on New Force Request
+  #And I complete the form the fourth time
+  #And I click Save Request
+  #Then I should see a confirm message for fourth request
+  #Then I should be on Student Dashboard Page
+  #When I click on New Force Request
+  #And I complete the form the fifth time
+  #And I click Save Request
+  #Then I should see a confirm message for fifth request
+  #Then I should be on Student Dashboard Page
+  #When I click on New Force Request
+  #And I complete the form the sixth time
+  #And I click Save Request
+  #Then I should see a error message for maximum limit
+  #Then I should be on Student Dashboard Page
+  Scenario: Editing Request                    # features/student_view.feature:172
+    When I am on the Login Page                # features/step_definitions/student_login_steps.rb:7
+    When I login with correct login info       # features/step_definitions/student_view_steps.rb:1
+    Then I should be on Student Dashboard Page # features/step_definitions/student_view_steps.rb:16
+
+24 scenarios (24 passed)
+190 steps (190 passed)
+0m27.695s
+Coverage report generated for Cucumber Features, RSpec to /home/ec2-user/environment/Force-Request-ChiUSDE/coverage. 1415 / 1825 LOC (77.53%) covered.

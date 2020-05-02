@@ -1,0 +1,189 @@
+..FF...1
+
+...Hold was selected
+.Hold was selected
+.***********
+633
+***********
+{:uin=>nil, :name=>"John Doe", :major=>nil, :email=>"johndoe@tamu.edu", :classification=>nil, :minor=>nil, "uin"=>"345345345", "name"=>"John Doe", "major"=>"CSCE", "classification"=>"G8", "email"=>"johndoe@tamu.edu", "phone"=>"9793459799", "request_semester"=>"2020 Fall", "course_id"=>"633", "section_id"=>"505", "priority"=>"High"}
+******************************
+#<Limit:0x000000000690f848>
+******************************
+.***********
+633
+***********
+{:uin=>"345345345", :name=>"John Doe", :major=>nil, :email=>"johndoe@tamu.edu", :classification=>nil, :minor=>nil, "uin"=>"345345345", "name"=>"John Doe", "major"=>"CSCE", "classification"=>"G8", "email"=>"johndoe@tamu.edu", "phone"=>"9793459799", "request_semester"=>"2020 Fall", "course_id"=>"633", "section_id"=>"505", "priority"=>"High"}
+******************************
+#<Limit:0x00000000054b0aa0>
+******************************
+#<StudentRequest:0x00000000046931c0>
+.***********
+633
+***********
+{:uin=>"345345345", :name=>"John Doe", :major=>nil, :email=>"johndoe@tamu.edu", :classification=>nil, :minor=>nil, "uin"=>"345345345", "name"=>"John Doe", "major"=>"CSCE", "classification"=>"G8", "email"=>"johndoe@tamu.edu", "phone"=>"9793459799", "request_semester"=>"2020 Fall", "course_id"=>"633", "section_id"=>"505", "priority"=>"High"}
+******************************
+#<Limit:0x00000000044e3528>
+******************************
+#<StudentRequest:0x00000000021c3a98>
+.***********
+
+***********
+{:uin=>nil, :name=>"John Doe", :major=>nil, :email=>"johndoe@tamu.edu", :classification=>nil, :minor=>nil, "uin"=>"345345345", "priority"=>"High"}
+******************************
+#<Limit:0x00000000074066c0>
+******************************
+F.***********
+633
+***********
+{:uin=>"345345345", :name=>"John Doe", :major=>nil, :email=>"johndoe@tamu.edu", :classification=>nil, :minor=>nil, "uin"=>"345345345", "name"=>"John Doe", "major"=>"CSCE", "classification"=>"G7", "email"=>"johndoe@tamu.edu", "phone"=>"9793459799", "request_semester"=>"2020 Fall", "course_id"=>"633", "section_id"=>"505", "priority"=>"high"}
+******************************
+******************************
+....+==========================
+here is add_force_request
+Non-existent UIN
++==========================
+.+==========================
+here is add_force_request
+Non-existent UIN
++==========================
+.+==========================
+here is add_force_request
+345345345
++==========================
+.+==========================
+here is add_force_request
+345345345
++==========================
+.+==========================
+here is add_force_request
+345345345
++==========================
+.+==========================
+here is add_force_request
+345345345
++==========================
+.....1
+
+.1
+
+......F...FF.*.F.***..............*
+
+Pending: (Failures listed here are expected and do not affect your suite's status)
+
+  1) UsersHelper add some examples to (or delete) /home/ec2-user/environment/Force-Request-ChiUSDE/spec/helpers/users_helper_spec.rb
+     # Not yet implemented
+     # ./spec/helpers/users_helper_spec.rb:14
+
+  2) Course add some examples to (or delete) /home/ec2-user/environment/Force-Request-ChiUSDE/spec/models/course_spec.rb
+     # Not yet implemented
+     # ./spec/models/course_spec.rb:4
+
+  3) Limit add some examples to (or delete) /home/ec2-user/environment/Force-Request-ChiUSDE/spec/models/limit_spec.rb
+     # Not yet implemented
+     # ./spec/models/limit_spec.rb:4
+
+  4) Log add some examples to (or delete) /home/ec2-user/environment/Force-Request-ChiUSDE/spec/models/log_spec.rb
+     # Not yet implemented
+     # ./spec/models/log_spec.rb:4
+
+  5) users/new.html.erb add some examples to (or delete) /home/ec2-user/environment/Force-Request-ChiUSDE/spec/views/users/new.html.erb_spec.rb
+     # Not yet implemented
+     # ./spec/views/users/new.html.erb_spec.rb:4
+
+Failures:
+
+  1) AdminsController addAdmin when the incorrect params are passed in render a flash notice
+     Failure/Error: :password => Digest::MD5.hexdigest(params[:admin_request][:password]),
+
+     TypeError:
+       no implicit conversion of nil into String
+     # ./app/controllers/admins_controller.rb:34:in `digest'
+     # ./app/controllers/admins_controller.rb:34:in `hexdigest'
+     # ./app/controllers/admins_controller.rb:34:in `addAdmin'
+     # /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/audited-4.8.0/lib/audited/sweeper.rb:14:in `around'
+     # /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/audited-4.8.0/lib/audited/sweeper.rb:14:in `around'
+     # /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/rails-controller-testing-1.0.2/lib/rails/controller/testing/template_assertions.rb:61:in `process'
+     # /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/gon-6.2.1/lib/gon/spec_helpers.rb:15:in `process'
+     # /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/rails-controller-testing-1.0.2/lib/rails/controller/testing/integration.rb:12:in `block (2 levels) in <module:Integration>'
+     # ./spec/controllers/admins_controller_spec.rb:25:in `block (4 levels) in <top (required)>'
+
+  2) AdminsController addAdmin when the incorrect params are passed in should redirec to the advmin review path
+     Failure/Error: :password => Digest::MD5.hexdigest(params[:admin_request][:password]),
+
+     TypeError:
+       no implicit conversion of nil into String
+     # ./app/controllers/admins_controller.rb:34:in `digest'
+     # ./app/controllers/admins_controller.rb:34:in `hexdigest'
+     # ./app/controllers/admins_controller.rb:34:in `addAdmin'
+     # /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/audited-4.8.0/lib/audited/sweeper.rb:14:in `around'
+     # /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/audited-4.8.0/lib/audited/sweeper.rb:14:in `around'
+     # /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/rails-controller-testing-1.0.2/lib/rails/controller/testing/template_assertions.rb:61:in `process'
+     # /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/gon-6.2.1/lib/gon/spec_helpers.rb:15:in `process'
+     # /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/rails-controller-testing-1.0.2/lib/rails/controller/testing/integration.rb:12:in `block (2 levels) in <module:Integration>'
+     # ./spec/controllers/admins_controller_spec.rb:25:in `block (4 levels) in <top (required)>'
+
+  3) StudentRequestsController Create Student Request:  on mal formatted create request attempts to create a new a New Force Request
+     Failure/Error: sections = params[:student_request][:section_id].split(",")
+
+     NoMethodError:
+       undefined method `split' for nil:NilClass
+     # ./app/controllers/student_requests_controller.rb:277:in `create'
+     # /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/audited-4.8.0/lib/audited/sweeper.rb:14:in `around'
+     # /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/audited-4.8.0/lib/audited/sweeper.rb:14:in `around'
+     # /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/rails-controller-testing-1.0.2/lib/rails/controller/testing/template_assertions.rb:61:in `process'
+     # /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/gon-6.2.1/lib/gon/spec_helpers.rb:15:in `process'
+     # /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/rails-controller-testing-1.0.2/lib/rails/controller/testing/integration.rb:12:in `block (2 levels) in <module:Integration>'
+     # ./spec/controllers/student_request_controller_spec.rb:165:in `block (4 levels) in <top (required)>'
+
+  4) StudentRequestsController login should set the current user to the returned user
+     Failure/Error: expect(request.session[:name].to_s).to eq("Schaeffer")
+
+       expected: "Schaeffer"
+            got: ""
+
+       (compared using ==)
+     # ./spec/controllers/student_request_controller_spec.rb:569:in `block (3 levels) in <top (required)>'
+
+  5) StudentRequestsController login should set the current user when the email has been confirmed
+     Failure/Error: expect(request.session[:name].to_s).to eq("John Doe")
+
+       expected: "John Doe"
+            got: ""
+
+       (compared using ==)
+     # ./spec/controllers/student_request_controller_spec.rb:608:in `block (3 levels) in <top (required)>'
+
+  6) StudentRequestsController login should set issue a flash warning when email has not been confirmed
+     Failure/Error: expect(flash[:warning]).to eq("The account has not been activated. Please check your email to activate your account!")
+
+       expected: "The account has not been activated. Please check your email to activate your account!"
+            got: "Entered Email and Password didn't match. Try again."
+
+       (compared using ==)
+     # ./spec/controllers/student_request_controller_spec.rb:622:in `block (3 levels) in <top (required)>'
+
+  7) StudentMailer update_force_state renders the subject
+     Failure/Error: expect(mail.bcc).to eq(['IAmSchaeffer@tamu.edu'])
+
+       expected: ["IAmSchaeffer@tamu.edu"]
+            got: ["123456789@tamu.edu", "123456780@tamu.edu", "123456789@tamu.edu", "123456780@tamu.edu", "123456789@t...amu.edu", "123456780@tamu.edu", "123456789@tamu.edu", "123456780@tamu.edu", "IAmSchaeffer@tamu.edu"]
+
+       (compared using ==)
+     # ./spec/mailers/student_mailer_spec.rb:40:in `block (3 levels) in <top (required)>'
+
+3 deprecation warnings total
+
+Finished in 1.15 seconds (files took 2.34 seconds to load)
+67 examples, 7 failures, 5 pending
+
+Failed examples:
+
+rspec ./spec/controllers/admins_controller_spec.rb:28 # AdminsController addAdmin when the incorrect params are passed in render a flash notice
+rspec ./spec/controllers/admins_controller_spec.rb:33 # AdminsController addAdmin when the incorrect params are passed in should redirec to the advmin review path
+rspec ./spec/controllers/student_request_controller_spec.rb:152 # StudentRequestsController Create Student Request:  on mal formatted create request attempts to create a new a New Force Request
+rspec ./spec/controllers/student_request_controller_spec.rb:563 # StudentRequestsController login should set the current user to the returned user
+rspec ./spec/controllers/student_request_controller_spec.rb:599 # StudentRequestsController login should set the current user when the email has been confirmed
+rspec ./spec/controllers/student_request_controller_spec.rb:614 # StudentRequestsController login should set issue a flash warning when email has not been confirmed
+rspec ./spec/mailers/student_mailer_spec.rb:36 # StudentMailer update_force_state renders the subject
+
+Coverage report generated for Cucumber Features, RSpec to /home/ec2-user/environment/Force-Request-ChiUSDE/coverage. 1415 / 1825 LOC (77.53%) covered.

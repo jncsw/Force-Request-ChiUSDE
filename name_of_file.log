@@ -1,0 +1,394 @@
+
+An error occurred while loading ./spec/controllers/admins_controller_spec.rb.
+Failure/Error: ActiveRecord::Migration.maintain_test_schema!
+
+PG::ConnectionBad:
+  could not connect to server: Connection refused
+  	Is the server running on host "localhost" (127.0.0.1) and accepting
+  	TCP/IP connections on port 5432?
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `initialize'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `new'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:729:in `new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:773:in `checkout_new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:752:in `try_to_checkout_new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:713:in `acquire_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:490:in `checkout'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:883:in `retrieve_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_handling.rb:91:in `connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:1042:in `needs_migration?'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:577:in `load_schema_if_pending!'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:592:in `block in maintain_test_schema!'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:823:in `suppress_messages'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:597:in `method_missing'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:592:in `maintain_test_schema!'
+# ./spec/rails_helper.rb:27:in `<top (required)>'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `require'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `block in require'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `require'
+# ./spec/controllers/admins_controller_spec.rb:2:in `<top (required)>'
+
+An error occurred while loading ./spec/controllers/student_controller_spec.rb.
+Failure/Error: ActiveRecord::Migration.maintain_test_schema!
+
+PG::ConnectionBad:
+  could not connect to server: Connection refused
+  	Is the server running on host "localhost" (127.0.0.1) and accepting
+  	TCP/IP connections on port 5432?
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `initialize'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `new'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:729:in `new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:773:in `checkout_new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:752:in `try_to_checkout_new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:713:in `acquire_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:490:in `checkout'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:883:in `retrieve_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_handling.rb:91:in `connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:1042:in `needs_migration?'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:577:in `load_schema_if_pending!'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:592:in `block in maintain_test_schema!'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:823:in `suppress_messages'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:597:in `method_missing'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:592:in `maintain_test_schema!'
+# ./spec/rails_helper.rb:27:in `<top (required)>'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `require'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `block in require'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `require'
+# ./spec/controllers/student_controller_spec.rb:2:in `<top (required)>'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `load'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `block in load'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `load'
+
+An error occurred while loading ./spec/controllers/student_request_controller_spec.rb.
+Failure/Error: ActiveRecord::Migration.maintain_test_schema!
+
+PG::ConnectionBad:
+  could not connect to server: Connection refused
+  	Is the server running on host "localhost" (127.0.0.1) and accepting
+  	TCP/IP connections on port 5432?
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `initialize'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `new'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:729:in `new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:773:in `checkout_new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:752:in `try_to_checkout_new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:713:in `acquire_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:490:in `checkout'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:883:in `retrieve_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_handling.rb:91:in `connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:1042:in `needs_migration?'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:577:in `load_schema_if_pending!'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:592:in `block in maintain_test_schema!'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:823:in `suppress_messages'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:597:in `method_missing'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:592:in `maintain_test_schema!'
+# ./spec/rails_helper.rb:27:in `<top (required)>'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `require'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `block in require'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `require'
+# ./spec/controllers/student_request_controller_spec.rb:2:in `<top (required)>'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `load'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `block in load'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `load'
+
+An error occurred while loading ./spec/helpers/users_helper_spec.rb.
+Failure/Error: ActiveRecord::Migration.maintain_test_schema!
+
+PG::ConnectionBad:
+  could not connect to server: Connection refused
+  	Is the server running on host "localhost" (127.0.0.1) and accepting
+  	TCP/IP connections on port 5432?
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `initialize'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `new'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:729:in `new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:773:in `checkout_new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:752:in `try_to_checkout_new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:713:in `acquire_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:490:in `checkout'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:883:in `retrieve_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_handling.rb:91:in `connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:1042:in `needs_migration?'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:577:in `load_schema_if_pending!'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:592:in `block in maintain_test_schema!'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:823:in `suppress_messages'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:597:in `method_missing'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:592:in `maintain_test_schema!'
+# ./spec/rails_helper.rb:27:in `<top (required)>'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `require'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `block in require'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `require'
+# ./spec/helpers/users_helper_spec.rb:1:in `<top (required)>'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `load'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `block in load'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `load'
+
+An error occurred while loading ./spec/models/course_spec.rb.
+Failure/Error: ActiveRecord::Migration.maintain_test_schema!
+
+PG::ConnectionBad:
+  could not connect to server: Connection refused
+  	Is the server running on host "localhost" (127.0.0.1) and accepting
+  	TCP/IP connections on port 5432?
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `initialize'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `new'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:729:in `new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:773:in `checkout_new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:752:in `try_to_checkout_new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:713:in `acquire_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:490:in `checkout'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:883:in `retrieve_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_handling.rb:91:in `connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:1042:in `needs_migration?'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:577:in `load_schema_if_pending!'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:592:in `block in maintain_test_schema!'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:823:in `suppress_messages'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:597:in `method_missing'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:592:in `maintain_test_schema!'
+# ./spec/rails_helper.rb:27:in `<top (required)>'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `require'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `block in require'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `require'
+# ./spec/models/course_spec.rb:1:in `<top (required)>'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `load'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `block in load'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `load'
+
+An error occurred while loading ./spec/models/limit_spec.rb.
+Failure/Error: ActiveRecord::Migration.maintain_test_schema!
+
+PG::ConnectionBad:
+  could not connect to server: Connection refused
+  	Is the server running on host "localhost" (127.0.0.1) and accepting
+  	TCP/IP connections on port 5432?
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `initialize'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `new'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:729:in `new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:773:in `checkout_new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:752:in `try_to_checkout_new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:713:in `acquire_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:490:in `checkout'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:883:in `retrieve_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_handling.rb:91:in `connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:1042:in `needs_migration?'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:577:in `load_schema_if_pending!'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:592:in `block in maintain_test_schema!'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:823:in `suppress_messages'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:597:in `method_missing'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:592:in `maintain_test_schema!'
+# ./spec/rails_helper.rb:27:in `<top (required)>'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `require'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `block in require'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `require'
+# ./spec/models/limit_spec.rb:1:in `<top (required)>'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `load'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `block in load'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `load'
+
+An error occurred while loading ./spec/models/log_spec.rb.
+Failure/Error: ActiveRecord::Migration.maintain_test_schema!
+
+PG::ConnectionBad:
+  could not connect to server: Connection refused
+  	Is the server running on host "localhost" (127.0.0.1) and accepting
+  	TCP/IP connections on port 5432?
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `initialize'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `new'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:729:in `new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:773:in `checkout_new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:752:in `try_to_checkout_new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:713:in `acquire_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:490:in `checkout'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:883:in `retrieve_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_handling.rb:91:in `connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:1042:in `needs_migration?'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:577:in `load_schema_if_pending!'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:592:in `block in maintain_test_schema!'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:823:in `suppress_messages'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:597:in `method_missing'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:592:in `maintain_test_schema!'
+# ./spec/rails_helper.rb:27:in `<top (required)>'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `require'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `block in require'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `require'
+# ./spec/models/log_spec.rb:1:in `<top (required)>'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `load'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `block in load'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `load'
+
+An error occurred while loading ./spec/models/student_requests_model_spec.rb.
+Failure/Error: ActiveRecord::Migration.maintain_test_schema!
+
+PG::ConnectionBad:
+  could not connect to server: Connection refused
+  	Is the server running on host "localhost" (127.0.0.1) and accepting
+  	TCP/IP connections on port 5432?
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `initialize'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `new'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:729:in `new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:773:in `checkout_new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:752:in `try_to_checkout_new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:713:in `acquire_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:490:in `checkout'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:883:in `retrieve_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_handling.rb:91:in `connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:1042:in `needs_migration?'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:577:in `load_schema_if_pending!'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:592:in `block in maintain_test_schema!'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:823:in `suppress_messages'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:597:in `method_missing'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:592:in `maintain_test_schema!'
+# ./spec/rails_helper.rb:27:in `<top (required)>'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `require'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `block in require'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `require'
+# ./spec/models/student_requests_model_spec.rb:3:in `<top (required)>'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `load'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `block in load'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `load'
+
+An error occurred while loading ./spec/models/student_spec.rb.
+Failure/Error: ActiveRecord::Migration.maintain_test_schema!
+
+PG::ConnectionBad:
+  could not connect to server: Connection refused
+  	Is the server running on host "localhost" (127.0.0.1) and accepting
+  	TCP/IP connections on port 5432?
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `initialize'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `new'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:729:in `new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:773:in `checkout_new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:752:in `try_to_checkout_new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:713:in `acquire_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:490:in `checkout'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:883:in `retrieve_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_handling.rb:91:in `connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:1042:in `needs_migration?'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:577:in `load_schema_if_pending!'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:592:in `block in maintain_test_schema!'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:823:in `suppress_messages'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:597:in `method_missing'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:592:in `maintain_test_schema!'
+# ./spec/rails_helper.rb:27:in `<top (required)>'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `require'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `block in require'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `require'
+# ./spec/models/student_spec.rb:2:in `<top (required)>'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `load'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `block in load'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `load'
+
+An error occurred while loading ./spec/views/users/new.html.erb_spec.rb.
+Failure/Error: ActiveRecord::Migration.maintain_test_schema!
+
+PG::ConnectionBad:
+  could not connect to server: Connection refused
+  	Is the server running on host "localhost" (127.0.0.1) and accepting
+  	TCP/IP connections on port 5432?
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `initialize'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `new'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:671:in `connect'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:217:in `initialize'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `new'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:729:in `new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:773:in `checkout_new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:752:in `try_to_checkout_new_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:713:in `acquire_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:490:in `checkout'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:364:in `connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:883:in `retrieve_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_handling.rb:128:in `retrieve_connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/connection_handling.rb:91:in `connection'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:1042:in `needs_migration?'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:577:in `load_schema_if_pending!'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:592:in `block in maintain_test_schema!'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:823:in `suppress_messages'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:597:in `method_missing'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activerecord-5.0.2/lib/active_record/migration.rb:592:in `maintain_test_schema!'
+# ./spec/rails_helper.rb:27:in `<top (required)>'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `require'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `block in require'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:293:in `require'
+# ./spec/views/users/new.html.erb_spec.rb:1:in `<top (required)>'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `load'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `block in load'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:259:in `load_dependency'
+# /home/ec2-user/.rvm/gems/ruby-2.4.3/gems/activesupport-5.0.2/lib/active_support/dependencies.rb:287:in `load'
+
+
+1 deprecation warning total
+
+Finished in 0.00029 seconds (files took 2.33 seconds to load)
+0 examples, 0 failures, 10 errors occurred outside of examples
+
+Coverage report generated for RSpec to /home/ec2-user/environment/Force-Request-ChiUSDE/coverage. 44 / 409 LOC (10.76%) covered.

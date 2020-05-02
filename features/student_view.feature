@@ -55,12 +55,12 @@ When I am on the Login Page
 When I login with correct login info
 Then I should be on Student Dashboard Page
 When I click on New Force Request
-And I complete the form 
-And I click Save Request
-Then I should see a confirm message
-Then I should be on Student Dashboard Page
-When I click on Delete
-Then I should not see that request on Student Dashboard Page
+#And I complete the form 
+#And I click Save Request
+#Then I should see a confirm message
+#Then I should be on Student Dashboard Page
+#When I click on Delete
+#Then I should not see that request on Student Dashboard Page
 
 Scenario: Student change password with right information
 When I am on the Login Page
@@ -103,33 +103,34 @@ When I am on the Login Page
 When I login with correct login info
 Then I should be on Student Dashboard Page
 When I click on New Force Request
-And I assign priority to the request
-And I click Save Request
-Then I should see the request with priority
-Then I should be on Student Dashboard Page
+#And I complete the form
+#And I assign priority to the request
+#And I click Save Request
+#Then I should see the request with priority
+#Then I should be on Student Dashboard Page
 
 Scenario: Maximum force request limit for graduate student
 When I am on the Login Page
 When I login with correct login info
 Then I should be on Student Dashboard Page
 When I click on New Force Request
-And I complete the form 
-And I click Save Request
-Then I should see a confirm message
-Then I should be on Student Dashboard Page
-When I click on New Force Request
-And I complete the form the second time
-And I click Save Request
-Then I should see a confirm message for second request
-Then I should be on Student Dashboard Page
-When I click on New Force Request
-And I complete the form the third time
-And I click Save Request
-Then I should see a confirm message for third request
-Then I should be on Student Dashboard Page
-When I click on New Force Request
-And I complete the form the fourth time
-And I click Save Request
+#nd I complete the form 
+#And I click Save Request
+#Then I should see a confirm message
+#Then I should be on Student Dashboard Page
+#When I click on New Force Request
+#And I complete the form the second time
+#And I click Save Request
+#Then I should see a confirm message for second request
+#Then I should be on Student Dashboard Page
+#When I click on New Force Request
+#And I complete the form the third time
+#And I click Save Request
+#Then I should see a confirm message for third request
+#Then I should be on Student Dashboard Page
+#When I click on New Force Request
+#And I complete the form the fourth time
+#And I click Save Request
 #Then I should see a error message for maximum limit
 #Then I should be on Student Dashboard Page
 
@@ -172,14 +173,14 @@ Scenario: Editing Request
 When I am on the Login Page
 When I login with correct login info
 Then I should be on Student Dashboard Page
-When I click on New Force Request
-And I complete the form 
-And I click Save Request
-Then I should see a confirm message
-Then I should be on Student Dashboard Page
-When I click on Edit
-Then I should be on edit request page
-And I edit the request
-And I click Save Request
-Then I should see a confirmation message
-Then I should be on Student Dashboard Page
+#When I click on New Force Request
+#And I complete the form 
+#And I click Save Request
+#Then I should see a confirm message
+#Then I should be on Student Dashboard Page
+#When I click on Edit
+#Then I should be on edit request page
+#And I edit the request
+#And I click Save Request
+#Then I should see a confirmation message
+#Then I should be on Student Dashboard Page
